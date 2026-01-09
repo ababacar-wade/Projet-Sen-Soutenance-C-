@@ -7,8 +7,11 @@ using System.Threading.Tasks;
 
 namespace ApplicationSoutenance.Models
 {
-    public class Candidat
+    public class Candidat:Utilisateur
     {
-       
+        //ce champ est obligatoire et la taille maximum est de 20  caracteres
+        [Required, MaxLength(20)]
+        // propriete contenant le matricule du candidat
+        public string MatriculeCandidat { get; set; }
     }
 }
