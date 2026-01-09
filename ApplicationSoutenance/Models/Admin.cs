@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ApplicationSoutenance.Models
 {
-    public class Admin
+    public class Admin : Utilisateur
     {
+
     }
 }
