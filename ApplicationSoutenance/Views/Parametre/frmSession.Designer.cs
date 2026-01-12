@@ -53,6 +53,7 @@
             this.btnSearch.TabIndex = 33;
             this.btnSearch.Text = "&Rechercher";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtRAnneeAcademique
             // 
@@ -127,33 +128,37 @@
             this.btnSlectionner.TabIndex = 24;
             this.btnSlectionner.Text = "&Selectionner";
             this.btnSlectionner.UseVisualStyleBackColor = true;
+            this.btnSlectionner.Click += new System.EventHandler(this.btnSlectionner_Click);
             // 
             // btnModifier
             // 
-            this.btnModifier.Location = new System.Drawing.Point(233, 556);
+            this.btnModifier.Location = new System.Drawing.Point(233, 478);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(144, 54);
             this.btnModifier.TabIndex = 22;
             this.btnModifier.Text = "&Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // btnSupprimer
             // 
-            this.btnSupprimer.Location = new System.Drawing.Point(233, 630);
+            this.btnSupprimer.Location = new System.Drawing.Point(233, 556);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(144, 54);
             this.btnSupprimer.TabIndex = 23;
             this.btnSupprimer.Text = "&Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // btnAjouter
             // 
-            this.btnAjouter.Location = new System.Drawing.Point(233, 479);
+            this.btnAjouter.Location = new System.Drawing.Point(233, 390);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(144, 54);
             this.btnAjouter.TabIndex = 21;
             this.btnAjouter.Text = "&Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // dgSession
             // 
@@ -162,14 +167,14 @@
             this.dgSession.Name = "dgSession";
             this.dgSession.RowHeadersWidth = 62;
             this.dgSession.RowTemplate.Height = 28;
-            this.dgSession.Size = new System.Drawing.Size(657, 578);
+            this.dgSession.Size = new System.Drawing.Size(657, 508);
             this.dgSession.TabIndex = 20;
             // 
             // frmSession
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1121, 716);
+            this.ClientSize = new System.Drawing.Size(1170, 648);
             this.ControlBox = false;
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtRAnneeAcademique);
@@ -187,6 +192,7 @@
             this.Controls.Add(this.dgSession);
             this.Name = "frmSession";
             this.Text = "Session";
+            this.Load += new System.EventHandler(this.frmSession_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgSession)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
