@@ -1,4 +1,5 @@
 ﻿using ApplicationSoutenance.Views.Parametre;
+using AppSenSoutenance.Views.Account;
 using Microsoft.VisualBasic.Devices;
 using System;
 using System.Collections;
@@ -108,6 +109,15 @@ namespace ApplicationSoutenance
             this.Width = myComputer.Screen.Bounds.Width;
             this.Height = myComputer.Screen.Bounds.Height;
             this.Location = new Point(0, 0);
+        }
+
+        private void utilisateurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fermer();
+            frmUtilisateur f = new frmUtilisateur();
+            f.MdiParent = this;
+            f.Show();
+            f.WindowState = FormWindowState.Maximized;
         }
     }
 }

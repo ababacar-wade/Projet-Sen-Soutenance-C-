@@ -30,13 +30,14 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.actionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.parametreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.securiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seDeconnecterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.parametreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.anneeAcademiqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.professeursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.securiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.utilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +64,20 @@
             this.actionToolStripMenuItem.Size = new System.Drawing.Size(79, 29);
             this.actionToolStripMenuItem.Text = "&Action";
             // 
+            // seDeconnecterToolStripMenuItem
+            // 
+            this.seDeconnecterToolStripMenuItem.Name = "seDeconnecterToolStripMenuItem";
+            this.seDeconnecterToolStripMenuItem.Size = new System.Drawing.Size(235, 34);
+            this.seDeconnecterToolStripMenuItem.Text = "&Se deconnecter";
+            this.seDeconnecterToolStripMenuItem.Click += new System.EventHandler(this.seDeconnecterToolStripMenuItem_Click);
+            // 
+            // quitterToolStripMenuItem
+            // 
+            this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(235, 34);
+            this.quitterToolStripMenuItem.Text = "&Quitter";
+            this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
+            // 
             // parametreToolStripMenuItem
             // 
             this.parametreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -73,46 +88,41 @@
             this.parametreToolStripMenuItem.Size = new System.Drawing.Size(107, 29);
             this.parametreToolStripMenuItem.Text = "&Parametre";
             // 
-            // securiteToolStripMenuItem
-            // 
-            this.securiteToolStripMenuItem.Name = "securiteToolStripMenuItem";
-            this.securiteToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
-            this.securiteToolStripMenuItem.Text = "&Securite";
-            // 
-            // seDeconnecterToolStripMenuItem
-            // 
-            this.seDeconnecterToolStripMenuItem.Name = "seDeconnecterToolStripMenuItem";
-            this.seDeconnecterToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.seDeconnecterToolStripMenuItem.Text = "&Se deconnecter";
-            this.seDeconnecterToolStripMenuItem.Click += new System.EventHandler(this.seDeconnecterToolStripMenuItem_Click);
-            // 
-            // quitterToolStripMenuItem
-            // 
-            this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.quitterToolStripMenuItem.Text = "&Quitter";
-            this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
-            // 
             // anneeAcademiqueToolStripMenuItem
             // 
             this.anneeAcademiqueToolStripMenuItem.Name = "anneeAcademiqueToolStripMenuItem";
-            this.anneeAcademiqueToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.anneeAcademiqueToolStripMenuItem.Size = new System.Drawing.Size(268, 34);
             this.anneeAcademiqueToolStripMenuItem.Text = "&Annee Academique";
             this.anneeAcademiqueToolStripMenuItem.Click += new System.EventHandler(this.anneeAcademiqueToolStripMenuItem_Click);
             // 
             // sessionToolStripMenuItem
             // 
             this.sessionToolStripMenuItem.Name = "sessionToolStripMenuItem";
-            this.sessionToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.sessionToolStripMenuItem.Size = new System.Drawing.Size(268, 34);
             this.sessionToolStripMenuItem.Text = "&Session ";
             this.sessionToolStripMenuItem.Click += new System.EventHandler(this.sessionToolStripMenuItem_Click);
             // 
             // professeursToolStripMenuItem
             // 
             this.professeursToolStripMenuItem.Name = "professeursToolStripMenuItem";
-            this.professeursToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.professeursToolStripMenuItem.Size = new System.Drawing.Size(268, 34);
             this.professeursToolStripMenuItem.Text = "&Professeurs";
             this.professeursToolStripMenuItem.Click += new System.EventHandler(this.professeursToolStripMenuItem_Click);
+            // 
+            // securiteToolStripMenuItem
+            // 
+            this.securiteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.utilisateurToolStripMenuItem});
+            this.securiteToolStripMenuItem.Name = "securiteToolStripMenuItem";
+            this.securiteToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
+            this.securiteToolStripMenuItem.Text = "&Securite";
+            // 
+            // utilisateurToolStripMenuItem
+            // 
+            this.utilisateurToolStripMenuItem.Name = "utilisateurToolStripMenuItem";
+            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.utilisateurToolStripMenuItem.Text = "&Utilisateur";
+            this.utilisateurToolStripMenuItem.Click += new System.EventHandler(this.utilisateurToolStripMenuItem_Click);
             // 
             // frmMdi
             // 
@@ -144,5 +154,6 @@
         private System.Windows.Forms.ToolStripMenuItem sessionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem securiteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem professeursToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem utilisateurToolStripMenuItem;
     }
 }
