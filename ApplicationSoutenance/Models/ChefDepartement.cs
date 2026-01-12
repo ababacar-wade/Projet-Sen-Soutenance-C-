@@ -10,7 +10,6 @@ namespace ApplicationSoutenance.Models
     public class ChefDepartement:Utilisateur
     {
         // FK vers Departement. Nullable si un chef peut ne pas être assigné.
-
         public int? DepartementId { get; set; }
         [ForeignKey("DepartementId")]
 
