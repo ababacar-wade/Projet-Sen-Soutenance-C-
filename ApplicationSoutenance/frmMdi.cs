@@ -1,4 +1,5 @@
-﻿using ApplicationSoutenance.Views.Parametre;
+﻿using ApplicationSoutenance.Views;
+using ApplicationSoutenance.Views.Parametre;
 using AppSenSoutenance.Views.Account;
 using Microsoft.VisualBasic.Devices;
 using System;
@@ -119,5 +120,7 @@ namespace ApplicationSoutenance
             f.Show();
             f.WindowState = FormWindowState.Maximized;
         }
+
+        
     }
 }
