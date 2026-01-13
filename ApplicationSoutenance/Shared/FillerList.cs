@@ -51,5 +51,42 @@ namespace AppSenSoutenance.Shared
             // Retourne la liste complète avec toutes les années académiques
             return laListe;
         }
+
+
+
+        public List<ListItem> fillDepartement()
+        {
+            // Initialisation d'une nouvelle liste vide de ListItem
+            List<ListItem> laListe = new List<ListItem>();
+
+            // Récupération de toutes les années académiques depuis la base de données
+            var liste = bd.departements.ToList();
+
+            // Ajout d'un premier élément par défaut "Sélectionner" avec la valeur 0
+            laListe.Add(new ListItem
+            {
+                // Value à 0 indique qu'aucune année académique n'est sélectionnée
+                Value = 0,
+                // Texte affiché par défaut dans la liste déroulante
+                Text = "Sélectionner"
+            });
+
+            // Boucle parcourant chaque année académique de la liste récupérée
+            foreach (var t in liste)
+            {
+                // Ajout de chaque année académique à la liste
+                laListe.Add(new ListItem
+                {
+                    // ⚠️ OBLIGATOIRE : clé primaire
+                    // Value contient l'ID de l'année académique (clé primaire)
+                    Value = t.IdDepartement,
+                    // Text contient le libellé affiché à l'utilisateur (ex: "2023-2024")
+                    Text = t.Libelle
+                });
+            }
+
+            // Retourne la liste complète avec toutes les années académiques
+            return laListe;
+        }
     }
 }

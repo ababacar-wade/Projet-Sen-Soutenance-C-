@@ -1,5 +1,6 @@
 ﻿
 using ApplicationSoutenance.Models;
+using AppSenSoutenance.Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,9 @@ namespace AppSenSoutenance.Views.Account
 
         BdSoutenanceContext bd = new BdSoutenanceContext();
 
+        //instancier la classe fillerList
+        FillerList Filler = new FillerList();
+
         private void frmUtilisateur_Load(object sender, EventArgs e)
         {
             ResetForm();
@@ -29,6 +33,8 @@ namespace AppSenSoutenance.Views.Account
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
+            
+
             Candidat candidat = new Candidat();
             candidat.Nomutilisateur = txtNom.Text;
             candidat.PrenomUtilisateur = txtPrenom.Text;
@@ -48,6 +54,7 @@ namespace AppSenSoutenance.Views.Account
 
         private void ResetForm()
         {
+           
             dgUtilisateur.DataSource = bd.utilisateurs.Select(
                 a => new
                 {
@@ -76,7 +83,10 @@ namespace AppSenSoutenance.Views.Account
             txtCPrenom.Clear();
             txtCEmail.Clear();
             txtCTel.Clear();
-            
+            cbxDepartement.DataSource = Filler.fillDepartement();
+            cbxDepartement.DisplayMember = "Text";
+            cbxDepartement.ValueMember = "Value";
+
         }
 
 
@@ -205,7 +215,21 @@ namespace AppSenSoutenance.Views.Account
 
         private void btnCAjouter_Click(object sender, EventArgs e)
         {
+            // Vérifie si l'utilisateur a sélectionné un Departement valide
+            // Ici, on suppose que la valeur 0 signifie "aucune sélection"
+            if ((int)cbxDepartement.SelectedValue == 0)
+            {
+                // Affiche un message d'erreur à l'utilisateur
+                MessageBox.Show("Veuillez sélectionner un Departement.");
+
+                // Arrête l'exécution du code pour éviter l'insertion invalide
+                return;
+            }
+
             ChefDepartement chefDepartement = new ChefDepartement();
+
+            chefDepartement.DepartementId = (int)cbxDepartement.SelectedValue;
+
             chefDepartement.Nomutilisateur = txtCNom.Text;
             chefDepartement.PrenomUtilisateur = txtCPrenom.Text.Trim();
             chefDepartement.Email = txtCEmail.Text;
@@ -227,6 +251,7 @@ namespace AppSenSoutenance.Views.Account
             chefDepartement.PrenomUtilisateur = txtCPrenom.Text;
             chefDepartement.TelUtilisateur = txtCTel.Text;
             chefDepartement.Email = txtCEmail.Text;
+            chefDepartement.DepartementId = (int)cbxDepartement.SelectedValue;
             bd.SaveChanges();
             ResetForm();
 
@@ -249,6 +274,7 @@ namespace AppSenSoutenance.Views.Account
             txtCPrenom.Text = chefDepartement.PrenomUtilisateur;
             txtCEmail.Text = chefDepartement.Email;
             txtCTel.Text = chefDepartement.TelUtilisateur;
+            cbxDepartement.SelectedValue = chefDepartement.DepartementId;
 
         }
     }

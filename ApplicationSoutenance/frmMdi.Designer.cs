@@ -77,14 +77,14 @@
             // seDeconnecterToolStripMenuItem
             // 
             this.seDeconnecterToolStripMenuItem.Name = "seDeconnecterToolStripMenuItem";
-            this.seDeconnecterToolStripMenuItem.Size = new System.Drawing.Size(267, 38);
+            this.seDeconnecterToolStripMenuItem.Size = new System.Drawing.Size(270, 38);
             this.seDeconnecterToolStripMenuItem.Text = "&Se déconnecter";
             this.seDeconnecterToolStripMenuItem.Click += new System.EventHandler(this.seDeconnecterToolStripMenuItem_Click);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(267, 38);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(270, 38);
             this.quitterToolStripMenuItem.Text = "&Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
