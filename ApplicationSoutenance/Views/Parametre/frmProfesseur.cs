@@ -19,6 +19,11 @@ namespace ApplicationSoutenance.Views.Parametre
         {
             // Initialisation des composants graphiques
             InitializeComponent();
+
+            // Liaison manuelle des événements Click
+            btnModifier.Click += btnModifier_Click;
+            btnSupprimer.Click += btnSupprimer_Click;
+            btnSlectionner.Click += btnSlectionner_Click;
         }
 
         // Création du contexte de base de données (Entity Framework)
