@@ -54,14 +54,23 @@ namespace AppSenSoutenance.Views.Account
                     a.PrenomUtilisateur,
                     a.TelUtilisateur,
                     a.Email}).ToList();
+            // Nettoyer les champs pour Candidat
             txtNom.Clear();
             txtPrenom.Clear();
             txtTel.Clear();
             txtEmail.Clear();
             txtMatricule.Text = GenererMatricule();
+            // Nettoyer les champs pour Professeur
+            txtPNom.Clear();
+            txtPPrenom.Clear();
+            txtPEmail.Clear();
+            txtPTel.Clear();
+            txtPSpecialite.Clear();
+            txtPEmail.Clear();
+            txtPSpecialite.Clear();
         }
 
-        
+
         // Méthode pour générer le matricule automatiquement
         private string GenererMatricule()
         {
@@ -132,6 +141,57 @@ namespace AppSenSoutenance.Views.Account
             candidat.MatriculeCandidat = txtMatricule.Text;
             bd.SaveChanges();
             ResetForm();
+        }
+
+        private void btnPAjouter_Click(object sender, EventArgs e)
+        {
+            Professeur professeur = new Professeur();
+            professeur.Nomutilisateur = txtPNom.Text;
+            professeur.PrenomUtilisateur = txtPPrenom.Text;
+            professeur.Email = txtPEmail.Text;
+            professeur.TelUtilisateur = txtPTel.Text;
+            using (MD5 md5hash = MD5.Create())
+            {
+                professeur.MotDePasse = Shared.Crypted.GetMd5Hash(md5hash, "passer1234");
+            }
+            professeur.SpecialiteProfesseur = txtPSpecialite.Text;
+            bd.professeurs.Add(professeur);
+            bd.SaveChanges();
+            ResetForm();
+        }
+
+        private void btnPModifier_Click(object sender, EventArgs e)
+        {
+            int? id = int.Parse(dgUtilisateur.CurrentRow.Cells[0].Value.ToString());
+            Professeur professeur = bd.professeurs.Find(id);
+            professeur.Nomutilisateur = txtPNom.Text;
+            professeur.PrenomUtilisateur = txtPPrenom.Text;
+            professeur.TelUtilisateur = txtPTel.Text;
+            professeur.Email = txtPEmail.Text;
+            professeur.SpecialiteProfesseur = txtPSpecialite.Text;
+            bd.SaveChanges();
+            ResetForm();
+        }
+
+        private void btnPSupprimer_Click(object sender, EventArgs e)
+        {
+            int? id = int.Parse(dgUtilisateur.CurrentRow.Cells[0].Value.ToString());
+            Professeur professeur = bd.professeurs.Find(id);
+            bd.professeurs.Remove(professeur);
+            bd.SaveChanges();
+            ResetForm();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            int? id = int.Parse(dgUtilisateur.CurrentRow.Cells[0].Value.ToString());
+            Professeur professeur = bd.professeurs.Find(id);
+            txtPNom.Text = professeur.Nomutilisateur;
+            txtPPrenom.Text = professeur.PrenomUtilisateur;
+            txtPEmail.Text = professeur.Email;
+            txtPTel.Text = professeur.TelUtilisateur;
+            txtPSpecialite.Text = professeur.SpecialiteProfesseur;
         }
     }
 }
