@@ -244,7 +244,7 @@
             this.tabProfesseur.Location = new System.Drawing.Point(4, 29);
             this.tabProfesseur.Name = "tabProfesseur";
             this.tabProfesseur.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProfesseur.Size = new System.Drawing.Size(354, 582);
+            this.tabProfesseur.Size = new System.Drawing.Size(607, 661);
             this.tabProfesseur.TabIndex = 1;
             this.tabProfesseur.Text = "Professeur";
             this.tabProfesseur.UseVisualStyleBackColor = true;
@@ -374,7 +374,7 @@
             this.tabChefDepartement.Location = new System.Drawing.Point(4, 29);
             this.tabChefDepartement.Name = "tabChefDepartement";
             this.tabChefDepartement.Padding = new System.Windows.Forms.Padding(3);
-            this.tabChefDepartement.Size = new System.Drawing.Size(354, 582);
+            this.tabChefDepartement.Size = new System.Drawing.Size(607, 661);
             this.tabChefDepartement.TabIndex = 2;
             this.tabChefDepartement.Text = "Chef Departement";
             this.tabChefDepartement.UseVisualStyleBackColor = true;

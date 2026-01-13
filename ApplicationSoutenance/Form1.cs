@@ -1,9 +1,11 @@
-﻿using System;
+﻿using ApplicationSoutenance.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +18,9 @@ namespace ApplicationSoutenance
         {
             InitializeComponent();
         }
+
+        BdSoutenanceContext bd = new BdSoutenanceContext();
+
         // la methode pour quitter l'application
         private void btnQuitter_Click(object sender, EventArgs e)
         {
@@ -25,9 +30,62 @@ namespace ApplicationSoutenance
         //la methode pour se connecter sur l'application
         private void btnSeConnecter_Click(object sender, EventArgs e)
         {
-            frmMdi f = new frmMdi();
-            f.Show();
-            this.Hide();
+            // Récupère le mot de passe hashé de l'utilisateur
+            // dont le login correspond à celui saisi dans le champ txtIdentifiant1
+            string hash = bd.utilisateurs
+                .Where(a => a.Email == txtIdentifiant.Text)
+                .FirstOrDefault()
+                .MotDePasse;
+
+            // Création d'un objet MD5 pour travailler avec les hash
+            using (MD5 md5Hash = MD5.Create())
+            {
+                // Vérifie si le hash du mot de passe saisi
+                // correspond au hash stocké dans la base de données
+                if (VerifyMd5Hash(md5Hash, txtMotDePasse.Text, hash))
+                {
+                    // Les deux hash sont identiques :
+                    // le mot de passe saisi est correct
+                    //on se connecte
+                    frmMdi f = new frmMdi();
+                    f.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    // Les hash sont différents :
+                    // le mot de passe saisi est incorrect
+                    MessageBox.Show("Mot de passe incorrect");
+                }
+            }
+
+
         }
+
+        // Méthode qui permet de vérifier si un mot de passe saisi
+        // correspond au mot de passe hashé stocké dans la base de données
+        static bool VerifyMd5Hash(MD5 md5Hash, string input, string hash)
+        {
+            // Génère le hash MD5 du texte saisi (ex : mot de passe entré par l'utilisateur)
+            string hashOfInput = AppSenSoutenance.Shared.Crypted.GetMd5Hash(md5Hash, input);
+
+            // Crée un comparateur de chaînes insensible à la casse
+            // (MD5 peut être écrit en majuscules ou minuscules)
+            StringComparer comparer = StringComparer.OrdinalIgnoreCase;
+
+            // Compare le hash calculé avec le hash stocké en base
+            // Si les deux sont identiques, Compare retourne 0
+            if (0 == comparer.Compare(hashOfInput, hash))
+            {
+                // Les deux hash sont identiques → mot de passe correct
+                return true;
+            }
+            else
+            {
+                // Les hash sont différents → mot de passe incorrect
+                return false;
+            }
+        }
+
     }
 }
