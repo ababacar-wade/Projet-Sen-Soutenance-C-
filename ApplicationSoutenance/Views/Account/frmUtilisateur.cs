@@ -36,9 +36,9 @@ namespace AppSenSoutenance.Views.Account
             candidat.Email = txtEmail.Text;
             using (MD5 md5Hash = MD5.Create())
             {
-               
+
                 candidat.MotDePasse = Shared.Crypted.GetMd5Hash(md5Hash, "passer1234");
-               
+
             }
             candidat.MatriculeCandidat = txtMatricule.Text;
             bd.candidats.Add(candidat);
@@ -49,11 +49,14 @@ namespace AppSenSoutenance.Views.Account
         private void ResetForm()
         {
             dgUtilisateur.DataSource = bd.utilisateurs.Select(
-                a => new {a.Idutilisateur,
+                a => new
+                {
+                    a.Idutilisateur,
                     a.Nomutilisateur,
                     a.PrenomUtilisateur,
                     a.TelUtilisateur,
-                    a.Email}).ToList();
+                    a.Email
+                }).ToList();
             // Nettoyer les champs pour Candidat
             txtNom.Clear();
             txtPrenom.Clear();
@@ -68,6 +71,12 @@ namespace AppSenSoutenance.Views.Account
             txtPSpecialite.Clear();
             txtPEmail.Clear();
             txtPSpecialite.Clear();
+            // Nettoyer les champs pour Chef de Departement
+            txtCNom.Clear();
+            txtCPrenom.Clear();
+            txtCEmail.Clear();
+            txtCTel.Clear();
+            
         }
 
 
@@ -137,7 +146,7 @@ namespace AppSenSoutenance.Views.Account
             candidat.Nomutilisateur = txtNom.Text;
             candidat.PrenomUtilisateur = txtPrenom.Text;
             candidat.Email = txtEmail.Text;
-            candidat.TelUtilisateur= txtTel.Text;
+            candidat.TelUtilisateur = txtTel.Text;
             candidat.MatriculeCandidat = txtMatricule.Text;
             bd.SaveChanges();
             ResetForm();
@@ -192,6 +201,55 @@ namespace AppSenSoutenance.Views.Account
             txtPEmail.Text = professeur.Email;
             txtPTel.Text = professeur.TelUtilisateur;
             txtPSpecialite.Text = professeur.SpecialiteProfesseur;
+        }
+
+        private void btnCAjouter_Click(object sender, EventArgs e)
+        {
+            ChefDepartement chefDepartement = new ChefDepartement();
+            chefDepartement.Nomutilisateur = txtCNom.Text;
+            chefDepartement.PrenomUtilisateur = txtCPrenom.Text.Trim();
+            chefDepartement.Email = txtCEmail.Text;
+            chefDepartement.TelUtilisateur = txtCTel.Text;
+            using (MD5 md5hash = MD5.Create())
+            {
+                chefDepartement.MotDePasse = Shared.Crypted.GetMd5Hash(md5hash, "passer1234");
+            }
+            bd.chefDepartements.Add(chefDepartement);
+            bd.SaveChanges();
+            ResetForm();
+        }
+
+        private void btnCModifier_Click(object sender, EventArgs e)
+        {
+            int? id = int.Parse(dgUtilisateur.CurrentRow.Cells[0].Value.ToString());
+            ChefDepartement chefDepartement = bd.chefDepartements.Find(id);
+            chefDepartement.Nomutilisateur = txtCNom.Text;
+            chefDepartement.PrenomUtilisateur = txtCPrenom.Text;
+            chefDepartement.TelUtilisateur = txtCTel.Text;
+            chefDepartement.Email = txtCEmail.Text;
+            bd.SaveChanges();
+            ResetForm();
+
+        }
+
+        private void btnCSupprimer_Click(object sender, EventArgs e)
+        {
+            int? id = int.Parse(dgUtilisateur.CurrentRow.Cells[0].Value.ToString());
+            ChefDepartement chefDepartement = bd.chefDepartements.Find(id);
+            bd.chefDepartements.Remove(chefDepartement);
+            bd.SaveChanges();
+            ResetForm();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int? id = int.Parse(dgUtilisateur.CurrentRow.Cells[0].Value.ToString());
+            ChefDepartement chefDepartement = bd.chefDepartements.Find(id);
+            txtCNom.Text = chefDepartement.Nomutilisateur;
+            txtCPrenom.Text = chefDepartement.PrenomUtilisateur;
+            txtCEmail.Text = chefDepartement.Email;
+            txtCTel.Text = chefDepartement.TelUtilisateur;
+
         }
     }
 }

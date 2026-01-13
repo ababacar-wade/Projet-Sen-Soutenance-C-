@@ -412,6 +412,7 @@
             this.btnCSupprimer.TabIndex = 38;
             this.btnCSupprimer.Text = "&Supprimer";
             this.btnCSupprimer.UseVisualStyleBackColor = true;
+            this.btnCSupprimer.Click += new System.EventHandler(this.btnCSupprimer_Click);
             // 
             // btnCModifier
             // 
@@ -421,6 +422,7 @@
             this.btnCModifier.TabIndex = 37;
             this.btnCModifier.Text = "&Modifier";
             this.btnCModifier.UseVisualStyleBackColor = true;
+            this.btnCModifier.Click += new System.EventHandler(this.btnCModifier_Click);
             // 
             // btnCAjouter
             // 
@@ -430,6 +432,7 @@
             this.btnCAjouter.TabIndex = 36;
             this.btnCAjouter.Text = "&Ajouter";
             this.btnCAjouter.UseVisualStyleBackColor = true;
+            this.btnCAjouter.Click += new System.EventHandler(this.btnCAjouter_Click);
             // 
             // label11
             // 
@@ -532,6 +535,7 @@
             this.button2.TabIndex = 40;
             this.button2.Text = "&Selectionner";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmUtilisateur
             // 
