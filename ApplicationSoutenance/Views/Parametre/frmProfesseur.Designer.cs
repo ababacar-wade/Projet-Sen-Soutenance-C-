@@ -72,6 +72,7 @@
             this.btnSlectionner.TabIndex = 45;
             this.btnSlectionner.Text = "&Selectionner";
             this.btnSlectionner.UseVisualStyleBackColor = true;
+            this.btnSlectionner.Click += new System.EventHandler(this.btnSlectionner_Click);
             // 
             // btnModifier
             // 
@@ -81,6 +82,7 @@
             this.btnModifier.TabIndex = 43;
             this.btnModifier.Text = "&Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // btnSupprimer
             // 
@@ -90,6 +92,7 @@
             this.btnSupprimer.TabIndex = 44;
             this.btnSupprimer.Text = "&Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // btnAjouter
             // 
@@ -99,6 +102,7 @@
             this.btnAjouter.TabIndex = 42;
             this.btnAjouter.Text = "&Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // txtMotDePasse
             // 
@@ -216,6 +220,7 @@
             this.Controls.Add(this.dgProfesseur);
             this.Name = "frmProfesseur";
             this.Text = "Professeur";
+            this.Load += new System.EventHandler(this.frmProfesseur_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgProfesseur)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
