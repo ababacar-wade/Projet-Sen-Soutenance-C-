@@ -85,14 +85,15 @@
             this.tabControl1.Controls.Add(this.tabCandidat);
             this.tabControl1.Controls.Add(this.tabProfesseur);
             this.tabControl1.Controls.Add(this.tabChefDepartement);
-            this.tabControl1.Location = new System.Drawing.Point(12, 91);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(362, 615);
+            this.tabControl1.Size = new System.Drawing.Size(362, 694);
             this.tabControl1.TabIndex = 0;
             // 
             // tabCandidat
             // 
+            this.tabCandidat.Controls.Add(this.btnSelectionner);
             this.tabCandidat.Controls.Add(this.btnSupprimer);
             this.tabCandidat.Controls.Add(this.btnModifier);
             this.tabCandidat.Controls.Add(this.btnAjouter);
@@ -109,14 +110,14 @@
             this.tabCandidat.Location = new System.Drawing.Point(4, 29);
             this.tabCandidat.Name = "tabCandidat";
             this.tabCandidat.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCandidat.Size = new System.Drawing.Size(354, 582);
+            this.tabCandidat.Size = new System.Drawing.Size(354, 661);
             this.tabCandidat.TabIndex = 0;
             this.tabCandidat.Text = "Candindat";
             this.tabCandidat.UseVisualStyleBackColor = true;
             // 
             // btnSupprimer
             // 
-            this.btnSupprimer.Location = new System.Drawing.Point(228, 535);
+            this.btnSupprimer.Location = new System.Drawing.Point(203, 543);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(126, 46);
             this.btnSupprimer.TabIndex = 12;
@@ -126,7 +127,7 @@
             // 
             // btnModifier
             // 
-            this.btnModifier.Location = new System.Drawing.Point(228, 475);
+            this.btnModifier.Location = new System.Drawing.Point(203, 478);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(126, 46);
             this.btnModifier.TabIndex = 11;
@@ -136,7 +137,7 @@
             // 
             // btnAjouter
             // 
-            this.btnAjouter.Location = new System.Drawing.Point(228, 415);
+            this.btnAjouter.Location = new System.Drawing.Point(203, 413);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(126, 46);
             this.btnAjouter.TabIndex = 10;
@@ -489,16 +490,16 @@
             // dgUtilisateur
             // 
             this.dgUtilisateur.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUtilisateur.Location = new System.Drawing.Point(389, 116);
+            this.dgUtilisateur.Location = new System.Drawing.Point(389, 12);
             this.dgUtilisateur.Name = "dgUtilisateur";
             this.dgUtilisateur.RowHeadersWidth = 62;
             this.dgUtilisateur.RowTemplate.Height = 28;
-            this.dgUtilisateur.Size = new System.Drawing.Size(727, 586);
+            this.dgUtilisateur.Size = new System.Drawing.Size(727, 690);
             this.dgUtilisateur.TabIndex = 1;
             // 
             // btnSelectionner
             // 
-            this.btnSelectionner.Location = new System.Drawing.Point(243, 12);
+            this.btnSelectionner.Location = new System.Drawing.Point(203, 608);
             this.btnSelectionner.Name = "btnSelectionner";
             this.btnSelectionner.Size = new System.Drawing.Size(126, 46);
             this.btnSelectionner.TabIndex = 2;
@@ -512,7 +513,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1128, 718);
             this.ControlBox = false;
-            this.Controls.Add(this.btnSelectionner);
             this.Controls.Add(this.dgUtilisateur);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmUtilisateur";
