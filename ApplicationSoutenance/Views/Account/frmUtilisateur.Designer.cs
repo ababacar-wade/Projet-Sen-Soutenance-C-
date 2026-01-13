@@ -30,21 +30,20 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabCandidat = new System.Windows.Forms.TabPage();
-            this.tabProfesseur = new System.Windows.Forms.TabPage();
-            this.tabChefDepartement = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNom = new System.Windows.Forms.TextBox();
-            this.txtPrenom = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtTel = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.btnSupprimer = new System.Windows.Forms.Button();
+            this.btnModifier = new System.Windows.Forms.Button();
+            this.btnAjouter = new System.Windows.Forms.Button();
             this.txtMatricule = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnAjouter = new System.Windows.Forms.Button();
-            this.btnModifier = new System.Windows.Forms.Button();
-            this.btnSupprimer = new System.Windows.Forms.Button();
+            this.txtTel = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtPrenom = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNom = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabProfesseur = new System.Windows.Forms.TabPage();
             this.btnPSupprimer = new System.Windows.Forms.Button();
             this.btnPModifier = new System.Windows.Forms.Button();
             this.btnPAjouter = new System.Windows.Forms.Button();
@@ -58,6 +57,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtPNom = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.tabChefDepartement = new System.Windows.Forms.TabPage();
+            this.cbxDepartement = new System.Windows.Forms.ComboBox();
             this.btnCSupprimer = new System.Windows.Forms.Button();
             this.btnCModifier = new System.Windows.Forms.Button();
             this.btnCAjouter = new System.Windows.Forms.Button();
@@ -71,7 +72,7 @@
             this.txtCNom = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.dgUtilisateur = new System.Windows.Forms.DataGridView();
-            this.cbxDepartement = new System.Windows.Forms.ComboBox();
+            this.btnSelectionner = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabCandidat.SuspendLayout();
             this.tabProfesseur.SuspendLayout();
@@ -84,7 +85,7 @@
             this.tabControl1.Controls.Add(this.tabCandidat);
             this.tabControl1.Controls.Add(this.tabProfesseur);
             this.tabControl1.Controls.Add(this.tabChefDepartement);
-            this.tabControl1.Location = new System.Drawing.Point(6, 1);
+            this.tabControl1.Location = new System.Drawing.Point(12, 91);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(362, 615);
@@ -113,6 +114,117 @@
             this.tabCandidat.Text = "Candindat";
             this.tabCandidat.UseVisualStyleBackColor = true;
             // 
+            // btnSupprimer
+            // 
+            this.btnSupprimer.Location = new System.Drawing.Point(228, 535);
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.Size = new System.Drawing.Size(126, 46);
+            this.btnSupprimer.TabIndex = 12;
+            this.btnSupprimer.Text = "&Supprimer";
+            this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
+            // 
+            // btnModifier
+            // 
+            this.btnModifier.Location = new System.Drawing.Point(228, 475);
+            this.btnModifier.Name = "btnModifier";
+            this.btnModifier.Size = new System.Drawing.Size(126, 46);
+            this.btnModifier.TabIndex = 11;
+            this.btnModifier.Text = "&Modifier";
+            this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
+            // 
+            // btnAjouter
+            // 
+            this.btnAjouter.Location = new System.Drawing.Point(228, 415);
+            this.btnAjouter.Name = "btnAjouter";
+            this.btnAjouter.Size = new System.Drawing.Size(126, 46);
+            this.btnAjouter.TabIndex = 10;
+            this.btnAjouter.Text = "&Ajouter";
+            this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
+            // 
+            // txtMatricule
+            // 
+            this.txtMatricule.Enabled = false;
+            this.txtMatricule.Location = new System.Drawing.Point(24, 354);
+            this.txtMatricule.Name = "txtMatricule";
+            this.txtMatricule.Size = new System.Drawing.Size(305, 26);
+            this.txtMatricule.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(24, 330);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 20);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Matricule";
+            // 
+            // txtTel
+            // 
+            this.txtTel.Location = new System.Drawing.Point(24, 284);
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(305, 26);
+            this.txtTel.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(24, 260);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 20);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Telephone";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(24, 211);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(305, 26);
+            this.txtEmail.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(24, 187);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Email";
+            // 
+            // txtPrenom
+            // 
+            this.txtPrenom.Location = new System.Drawing.Point(24, 135);
+            this.txtPrenom.Name = "txtPrenom";
+            this.txtPrenom.Size = new System.Drawing.Size(305, 26);
+            this.txtPrenom.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 111);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Prenom";
+            // 
+            // txtNom
+            // 
+            this.txtNom.Location = new System.Drawing.Point(24, 57);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(305, 26);
+            this.txtNom.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nom";
+            // 
             // tabProfesseur
             // 
             this.tabProfesseur.Controls.Add(this.btnPSupprimer);
@@ -135,137 +247,6 @@
             this.tabProfesseur.TabIndex = 1;
             this.tabProfesseur.Text = "Professeur";
             this.tabProfesseur.UseVisualStyleBackColor = true;
-            // 
-            // tabChefDepartement
-            // 
-            this.tabChefDepartement.Controls.Add(this.cbxDepartement);
-            this.tabChefDepartement.Controls.Add(this.btnCSupprimer);
-            this.tabChefDepartement.Controls.Add(this.btnCModifier);
-            this.tabChefDepartement.Controls.Add(this.btnCAjouter);
-            this.tabChefDepartement.Controls.Add(this.label11);
-            this.tabChefDepartement.Controls.Add(this.txtCTel);
-            this.tabChefDepartement.Controls.Add(this.label12);
-            this.tabChefDepartement.Controls.Add(this.txtCEmail);
-            this.tabChefDepartement.Controls.Add(this.label13);
-            this.tabChefDepartement.Controls.Add(this.txtCPrenom);
-            this.tabChefDepartement.Controls.Add(this.label14);
-            this.tabChefDepartement.Controls.Add(this.txtCNom);
-            this.tabChefDepartement.Controls.Add(this.label15);
-            this.tabChefDepartement.Location = new System.Drawing.Point(4, 29);
-            this.tabChefDepartement.Name = "tabChefDepartement";
-            this.tabChefDepartement.Padding = new System.Windows.Forms.Padding(3);
-            this.tabChefDepartement.Size = new System.Drawing.Size(354, 582);
-            this.tabChefDepartement.TabIndex = 2;
-            this.tabChefDepartement.Text = "Chef Departement";
-            this.tabChefDepartement.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nom";
-            // 
-            // txtNom
-            // 
-            this.txtNom.Location = new System.Drawing.Point(24, 57);
-            this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(305, 26);
-            this.txtNom.TabIndex = 1;
-            // 
-            // txtPrenom
-            // 
-            this.txtPrenom.Location = new System.Drawing.Point(24, 135);
-            this.txtPrenom.Name = "txtPrenom";
-            this.txtPrenom.Size = new System.Drawing.Size(305, 26);
-            this.txtPrenom.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 111);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Prenom";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(24, 211);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(305, 26);
-            this.txtEmail.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 187);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Email";
-            // 
-            // txtTel
-            // 
-            this.txtTel.Location = new System.Drawing.Point(24, 284);
-            this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(305, 26);
-            this.txtTel.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 260);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Telephone";
-            // 
-            // txtMatricule
-            // 
-            this.txtMatricule.Location = new System.Drawing.Point(24, 354);
-            this.txtMatricule.Name = "txtMatricule";
-            this.txtMatricule.Size = new System.Drawing.Size(305, 26);
-            this.txtMatricule.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 330);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Matricule";
-            // 
-            // btnAjouter
-            // 
-            this.btnAjouter.Location = new System.Drawing.Point(227, 415);
-            this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(102, 29);
-            this.btnAjouter.TabIndex = 10;
-            this.btnAjouter.Text = "&Ajouter";
-            this.btnAjouter.UseVisualStyleBackColor = true;
-            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
-            // 
-            // btnModifier
-            // 
-            this.btnModifier.Location = new System.Drawing.Point(227, 471);
-            this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(102, 29);
-            this.btnModifier.TabIndex = 11;
-            this.btnModifier.Text = "&Modifier";
-            this.btnModifier.UseVisualStyleBackColor = true;
-            // 
-            // btnSupprimer
-            // 
-            this.btnSupprimer.Location = new System.Drawing.Point(227, 524);
-            this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(102, 29);
-            this.btnSupprimer.TabIndex = 12;
-            this.btnSupprimer.Text = "&Supprimer";
-            this.btnSupprimer.UseVisualStyleBackColor = true;
             // 
             // btnPSupprimer
             // 
@@ -374,6 +355,37 @@
             this.label10.TabIndex = 13;
             this.label10.Text = "Nom";
             // 
+            // tabChefDepartement
+            // 
+            this.tabChefDepartement.Controls.Add(this.cbxDepartement);
+            this.tabChefDepartement.Controls.Add(this.btnCSupprimer);
+            this.tabChefDepartement.Controls.Add(this.btnCModifier);
+            this.tabChefDepartement.Controls.Add(this.btnCAjouter);
+            this.tabChefDepartement.Controls.Add(this.label11);
+            this.tabChefDepartement.Controls.Add(this.txtCTel);
+            this.tabChefDepartement.Controls.Add(this.label12);
+            this.tabChefDepartement.Controls.Add(this.txtCEmail);
+            this.tabChefDepartement.Controls.Add(this.label13);
+            this.tabChefDepartement.Controls.Add(this.txtCPrenom);
+            this.tabChefDepartement.Controls.Add(this.label14);
+            this.tabChefDepartement.Controls.Add(this.txtCNom);
+            this.tabChefDepartement.Controls.Add(this.label15);
+            this.tabChefDepartement.Location = new System.Drawing.Point(4, 29);
+            this.tabChefDepartement.Name = "tabChefDepartement";
+            this.tabChefDepartement.Padding = new System.Windows.Forms.Padding(3);
+            this.tabChefDepartement.Size = new System.Drawing.Size(354, 582);
+            this.tabChefDepartement.TabIndex = 2;
+            this.tabChefDepartement.Text = "Chef Departement";
+            this.tabChefDepartement.UseVisualStyleBackColor = true;
+            // 
+            // cbxDepartement
+            // 
+            this.cbxDepartement.FormattingEnabled = true;
+            this.cbxDepartement.Location = new System.Drawing.Point(24, 339);
+            this.cbxDepartement.Name = "cbxDepartement";
+            this.cbxDepartement.Size = new System.Drawing.Size(301, 28);
+            this.cbxDepartement.TabIndex = 39;
+            // 
             // btnCSupprimer
             // 
             this.btnCSupprimer.Location = new System.Drawing.Point(223, 509);
@@ -477,27 +489,30 @@
             // dgUtilisateur
             // 
             this.dgUtilisateur.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUtilisateur.Location = new System.Drawing.Point(389, 30);
+            this.dgUtilisateur.Location = new System.Drawing.Point(389, 116);
             this.dgUtilisateur.Name = "dgUtilisateur";
             this.dgUtilisateur.RowHeadersWidth = 62;
             this.dgUtilisateur.RowTemplate.Height = 28;
             this.dgUtilisateur.Size = new System.Drawing.Size(727, 586);
             this.dgUtilisateur.TabIndex = 1;
             // 
-            // cbxDepartement
+            // btnSelectionner
             // 
-            this.cbxDepartement.FormattingEnabled = true;
-            this.cbxDepartement.Location = new System.Drawing.Point(24, 339);
-            this.cbxDepartement.Name = "cbxDepartement";
-            this.cbxDepartement.Size = new System.Drawing.Size(301, 28);
-            this.cbxDepartement.TabIndex = 39;
+            this.btnSelectionner.Location = new System.Drawing.Point(243, 12);
+            this.btnSelectionner.Name = "btnSelectionner";
+            this.btnSelectionner.Size = new System.Drawing.Size(126, 46);
+            this.btnSelectionner.TabIndex = 2;
+            this.btnSelectionner.Text = "&Selectionner";
+            this.btnSelectionner.UseVisualStyleBackColor = true;
+            this.btnSelectionner.Click += new System.EventHandler(this.btnSelectionner_Click);
             // 
             // frmUtilisateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1128, 628);
+            this.ClientSize = new System.Drawing.Size(1128, 718);
             this.ControlBox = false;
+            this.Controls.Add(this.btnSelectionner);
             this.Controls.Add(this.dgUtilisateur);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmUtilisateur";
@@ -561,5 +576,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cbxDepartement;
         private System.Windows.Forms.DataGridView dgUtilisateur;
+        private System.Windows.Forms.Button btnSelectionner;
     }
 }
