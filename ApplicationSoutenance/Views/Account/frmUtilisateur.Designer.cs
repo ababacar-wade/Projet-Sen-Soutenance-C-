@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabCandidat = new System.Windows.Forms.TabPage();
+            this.btnSelectionner = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnAjouter = new System.Windows.Forms.Button();
@@ -72,7 +73,8 @@
             this.txtCNom = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.dgUtilisateur = new System.Windows.Forms.DataGridView();
-            this.btnSelectionner = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabCandidat.SuspendLayout();
             this.tabProfesseur.SuspendLayout();
@@ -114,6 +116,16 @@
             this.tabCandidat.TabIndex = 0;
             this.tabCandidat.Text = "Candindat";
             this.tabCandidat.UseVisualStyleBackColor = true;
+            // 
+            // btnSelectionner
+            // 
+            this.btnSelectionner.Location = new System.Drawing.Point(203, 608);
+            this.btnSelectionner.Name = "btnSelectionner";
+            this.btnSelectionner.Size = new System.Drawing.Size(126, 46);
+            this.btnSelectionner.TabIndex = 2;
+            this.btnSelectionner.Text = "&Selectionner";
+            this.btnSelectionner.UseVisualStyleBackColor = true;
+            this.btnSelectionner.Click += new System.EventHandler(this.btnSelectionner_Click);
             // 
             // btnSupprimer
             // 
@@ -228,6 +240,7 @@
             // 
             // tabProfesseur
             // 
+            this.tabProfesseur.Controls.Add(this.button1);
             this.tabProfesseur.Controls.Add(this.btnPSupprimer);
             this.tabProfesseur.Controls.Add(this.btnPModifier);
             this.tabProfesseur.Controls.Add(this.btnPAjouter);
@@ -244,37 +257,40 @@
             this.tabProfesseur.Location = new System.Drawing.Point(4, 29);
             this.tabProfesseur.Name = "tabProfesseur";
             this.tabProfesseur.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProfesseur.Size = new System.Drawing.Size(354, 582);
+            this.tabProfesseur.Size = new System.Drawing.Size(354, 661);
             this.tabProfesseur.TabIndex = 1;
             this.tabProfesseur.Text = "Professeur";
             this.tabProfesseur.UseVisualStyleBackColor = true;
             // 
             // btnPSupprimer
             // 
-            this.btnPSupprimer.Location = new System.Drawing.Point(220, 500);
+            this.btnPSupprimer.Location = new System.Drawing.Point(220, 493);
             this.btnPSupprimer.Name = "btnPSupprimer";
-            this.btnPSupprimer.Size = new System.Drawing.Size(102, 29);
+            this.btnPSupprimer.Size = new System.Drawing.Size(102, 33);
             this.btnPSupprimer.TabIndex = 25;
             this.btnPSupprimer.Text = "&Supprimer";
             this.btnPSupprimer.UseVisualStyleBackColor = true;
+            this.btnPSupprimer.Click += new System.EventHandler(this.btnPSupprimer_Click);
             // 
             // btnPModifier
             // 
-            this.btnPModifier.Location = new System.Drawing.Point(220, 447);
+            this.btnPModifier.Location = new System.Drawing.Point(220, 442);
             this.btnPModifier.Name = "btnPModifier";
-            this.btnPModifier.Size = new System.Drawing.Size(102, 29);
+            this.btnPModifier.Size = new System.Drawing.Size(102, 33);
             this.btnPModifier.TabIndex = 24;
             this.btnPModifier.Text = "&Modifier";
             this.btnPModifier.UseVisualStyleBackColor = true;
+            this.btnPModifier.Click += new System.EventHandler(this.btnPModifier_Click);
             // 
             // btnPAjouter
             // 
             this.btnPAjouter.Location = new System.Drawing.Point(220, 391);
             this.btnPAjouter.Name = "btnPAjouter";
-            this.btnPAjouter.Size = new System.Drawing.Size(102, 29);
+            this.btnPAjouter.Size = new System.Drawing.Size(102, 33);
             this.btnPAjouter.TabIndex = 23;
             this.btnPAjouter.Text = "&Ajouter";
             this.btnPAjouter.UseVisualStyleBackColor = true;
+            this.btnPAjouter.Click += new System.EventHandler(this.btnPAjouter_Click);
             // 
             // txtPSpecialite
             // 
@@ -358,6 +374,7 @@
             // 
             // tabChefDepartement
             // 
+            this.tabChefDepartement.Controls.Add(this.button2);
             this.tabChefDepartement.Controls.Add(this.cbxDepartement);
             this.tabChefDepartement.Controls.Add(this.btnCSupprimer);
             this.tabChefDepartement.Controls.Add(this.btnCModifier);
@@ -374,7 +391,7 @@
             this.tabChefDepartement.Location = new System.Drawing.Point(4, 29);
             this.tabChefDepartement.Name = "tabChefDepartement";
             this.tabChefDepartement.Padding = new System.Windows.Forms.Padding(3);
-            this.tabChefDepartement.Size = new System.Drawing.Size(354, 582);
+            this.tabChefDepartement.Size = new System.Drawing.Size(354, 661);
             this.tabChefDepartement.TabIndex = 2;
             this.tabChefDepartement.Text = "Chef Departement";
             this.tabChefDepartement.UseVisualStyleBackColor = true;
@@ -389,27 +406,27 @@
             // 
             // btnCSupprimer
             // 
-            this.btnCSupprimer.Location = new System.Drawing.Point(223, 509);
+            this.btnCSupprimer.Location = new System.Drawing.Point(199, 510);
             this.btnCSupprimer.Name = "btnCSupprimer";
-            this.btnCSupprimer.Size = new System.Drawing.Size(102, 29);
+            this.btnCSupprimer.Size = new System.Drawing.Size(126, 46);
             this.btnCSupprimer.TabIndex = 38;
             this.btnCSupprimer.Text = "&Supprimer";
             this.btnCSupprimer.UseVisualStyleBackColor = true;
             // 
             // btnCModifier
             // 
-            this.btnCModifier.Location = new System.Drawing.Point(223, 456);
+            this.btnCModifier.Location = new System.Drawing.Point(199, 459);
             this.btnCModifier.Name = "btnCModifier";
-            this.btnCModifier.Size = new System.Drawing.Size(102, 29);
+            this.btnCModifier.Size = new System.Drawing.Size(126, 46);
             this.btnCModifier.TabIndex = 37;
             this.btnCModifier.Text = "&Modifier";
             this.btnCModifier.UseVisualStyleBackColor = true;
             // 
             // btnCAjouter
             // 
-            this.btnCAjouter.Location = new System.Drawing.Point(223, 400);
+            this.btnCAjouter.Location = new System.Drawing.Point(199, 408);
             this.btnCAjouter.Name = "btnCAjouter";
-            this.btnCAjouter.Size = new System.Drawing.Size(102, 29);
+            this.btnCAjouter.Size = new System.Drawing.Size(126, 46);
             this.btnCAjouter.TabIndex = 36;
             this.btnCAjouter.Text = "&Ajouter";
             this.btnCAjouter.UseVisualStyleBackColor = true;
@@ -497,15 +514,24 @@
             this.dgUtilisateur.Size = new System.Drawing.Size(727, 690);
             this.dgUtilisateur.TabIndex = 1;
             // 
-            // btnSelectionner
+            // button1
             // 
-            this.btnSelectionner.Location = new System.Drawing.Point(203, 608);
-            this.btnSelectionner.Name = "btnSelectionner";
-            this.btnSelectionner.Size = new System.Drawing.Size(126, 46);
-            this.btnSelectionner.TabIndex = 2;
-            this.btnSelectionner.Text = "&Selectionner";
-            this.btnSelectionner.UseVisualStyleBackColor = true;
-            this.btnSelectionner.Click += new System.EventHandler(this.btnSelectionner_Click);
+            this.button1.Location = new System.Drawing.Point(220, 544);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 33);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "&Selectionner";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(199, 562);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(126, 46);
+            this.button2.TabIndex = 40;
+            this.button2.Text = "&Selectionner";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // frmUtilisateur
             // 
@@ -577,5 +603,7 @@
         private System.Windows.Forms.ComboBox cbxDepartement;
         private System.Windows.Forms.DataGridView dgUtilisateur;
         private System.Windows.Forms.Button btnSelectionner;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
