@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabCandidat = new System.Windows.Forms.TabPage();
+            this.dgCandidats = new System.Windows.Forms.DataGridView();
             this.btnSelectionner = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
@@ -45,7 +46,8 @@
             this.txtNom = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabProfesseur = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dgProfesseurs = new System.Windows.Forms.DataGridView();
+            this.btnPSelectionne = new System.Windows.Forms.Button();
             this.btnPSupprimer = new System.Windows.Forms.Button();
             this.btnPModifier = new System.Windows.Forms.Button();
             this.btnPAjouter = new System.Windows.Forms.Button();
@@ -60,6 +62,7 @@
             this.txtPNom = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabChefDepartement = new System.Windows.Forms.TabPage();
+            this.dgChefDepartements = new System.Windows.Forms.DataGridView();
             this.btnCSelectionner = new System.Windows.Forms.Button();
             this.cbxDepartement = new System.Windows.Forms.ComboBox();
             this.btnCSupprimer = new System.Windows.Forms.Button();
@@ -74,12 +77,13 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtCNom = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.dgUtilisateur = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabCandidat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCandidats)).BeginInit();
             this.tabProfesseur.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgProfesseurs)).BeginInit();
             this.tabChefDepartement.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgUtilisateur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgChefDepartements)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -90,11 +94,13 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(362, 694);
+            this.tabControl1.Size = new System.Drawing.Size(1435, 694);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabCandidat
             // 
+            this.tabCandidat.Controls.Add(this.dgCandidats);
             this.tabCandidat.Controls.Add(this.btnSelectionner);
             this.tabCandidat.Controls.Add(this.btnSupprimer);
             this.tabCandidat.Controls.Add(this.btnModifier);
@@ -112,10 +118,20 @@
             this.tabCandidat.Location = new System.Drawing.Point(4, 29);
             this.tabCandidat.Name = "tabCandidat";
             this.tabCandidat.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCandidat.Size = new System.Drawing.Size(354, 661);
+            this.tabCandidat.Size = new System.Drawing.Size(1427, 661);
             this.tabCandidat.TabIndex = 0;
-            this.tabCandidat.Text = "Candindat";
+            this.tabCandidat.Text = "Candidat";
             this.tabCandidat.UseVisualStyleBackColor = true;
+            // 
+            // dgCandidats
+            // 
+            this.dgCandidats.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCandidats.Location = new System.Drawing.Point(401, 6);
+            this.dgCandidats.Name = "dgCandidats";
+            this.dgCandidats.RowHeadersWidth = 62;
+            this.dgCandidats.RowTemplate.Height = 28;
+            this.dgCandidats.Size = new System.Drawing.Size(1011, 631);
+            this.dgCandidats.TabIndex = 1;
             // 
             // btnSelectionner
             // 
@@ -240,7 +256,8 @@
             // 
             // tabProfesseur
             // 
-            this.tabProfesseur.Controls.Add(this.button1);
+            this.tabProfesseur.Controls.Add(this.dgProfesseurs);
+            this.tabProfesseur.Controls.Add(this.btnPSelectionne);
             this.tabProfesseur.Controls.Add(this.btnPSupprimer);
             this.tabProfesseur.Controls.Add(this.btnPModifier);
             this.tabProfesseur.Controls.Add(this.btnPAjouter);
@@ -257,20 +274,29 @@
             this.tabProfesseur.Location = new System.Drawing.Point(4, 29);
             this.tabProfesseur.Name = "tabProfesseur";
             this.tabProfesseur.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProfesseur.Size = new System.Drawing.Size(354, 661);
+            this.tabProfesseur.Size = new System.Drawing.Size(1427, 661);
             this.tabProfesseur.TabIndex = 1;
             this.tabProfesseur.Text = "Professeur";
             this.tabProfesseur.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // dgProfesseurs
             // 
-            this.button1.Location = new System.Drawing.Point(220, 544);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 33);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "&Selectionner";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.dgProfesseurs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgProfesseurs.Location = new System.Drawing.Point(367, 9);
+            this.dgProfesseurs.Name = "dgProfesseurs";
+            this.dgProfesseurs.RowHeadersWidth = 62;
+            this.dgProfesseurs.RowTemplate.Height = 28;
+            this.dgProfesseurs.Size = new System.Drawing.Size(1041, 631);
+            this.dgProfesseurs.TabIndex = 27;
+            // 
+            // btnPSelectionne
+            // 
+            this.btnPSelectionne.Location = new System.Drawing.Point(220, 544);
+            this.btnPSelectionne.Name = "btnPSelectionne";
+            this.btnPSelectionne.Size = new System.Drawing.Size(102, 33);
+            this.btnPSelectionne.TabIndex = 26;
+            this.btnPSelectionne.Text = "&Selectionner";
+            this.btnPSelectionne.UseVisualStyleBackColor = true;
             // 
             // btnPSupprimer
             // 
@@ -384,6 +410,7 @@
             // 
             // tabChefDepartement
             // 
+            this.tabChefDepartement.Controls.Add(this.dgChefDepartements);
             this.tabChefDepartement.Controls.Add(this.btnCSelectionner);
             this.tabChefDepartement.Controls.Add(this.cbxDepartement);
             this.tabChefDepartement.Controls.Add(this.btnCSupprimer);
@@ -401,10 +428,20 @@
             this.tabChefDepartement.Location = new System.Drawing.Point(4, 29);
             this.tabChefDepartement.Name = "tabChefDepartement";
             this.tabChefDepartement.Padding = new System.Windows.Forms.Padding(3);
-            this.tabChefDepartement.Size = new System.Drawing.Size(354, 661);
+            this.tabChefDepartement.Size = new System.Drawing.Size(1427, 661);
             this.tabChefDepartement.TabIndex = 2;
             this.tabChefDepartement.Text = "Chef Departement";
             this.tabChefDepartement.UseVisualStyleBackColor = true;
+            // 
+            // dgChefDepartements
+            // 
+            this.dgChefDepartements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgChefDepartements.Location = new System.Drawing.Point(366, 18);
+            this.dgChefDepartements.Name = "dgChefDepartements";
+            this.dgChefDepartements.RowHeadersWidth = 62;
+            this.dgChefDepartements.RowTemplate.Height = 28;
+            this.dgChefDepartements.Size = new System.Drawing.Size(1055, 631);
+            this.dgChefDepartements.TabIndex = 41;
             // 
             // btnCSelectionner
             // 
@@ -527,23 +564,12 @@
             this.label15.TabIndex = 26;
             this.label15.Text = "Nom";
             // 
-            // dgUtilisateur
-            // 
-            this.dgUtilisateur.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUtilisateur.Location = new System.Drawing.Point(389, 12);
-            this.dgUtilisateur.Name = "dgUtilisateur";
-            this.dgUtilisateur.RowHeadersWidth = 62;
-            this.dgUtilisateur.RowTemplate.Height = 28;
-            this.dgUtilisateur.Size = new System.Drawing.Size(727, 690);
-            this.dgUtilisateur.TabIndex = 1;
-            // 
             // frmUtilisateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1128, 718);
+            this.ClientSize = new System.Drawing.Size(1459, 718);
             this.ControlBox = false;
-            this.Controls.Add(this.dgUtilisateur);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmUtilisateur";
             this.Text = "Gestion des utilisateur";
@@ -551,11 +577,13 @@
             this.tabControl1.ResumeLayout(false);
             this.tabCandidat.ResumeLayout(false);
             this.tabCandidat.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCandidats)).EndInit();
             this.tabProfesseur.ResumeLayout(false);
             this.tabProfesseur.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgProfesseurs)).EndInit();
             this.tabChefDepartement.ResumeLayout(false);
             this.tabChefDepartement.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgUtilisateur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgChefDepartements)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -605,9 +633,11 @@
         private System.Windows.Forms.TextBox txtCNom;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cbxDepartement;
-        private System.Windows.Forms.DataGridView dgUtilisateur;
+        private System.Windows.Forms.DataGridView dgCandidats;
         private System.Windows.Forms.Button btnSelectionner;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPSelectionne;
         private System.Windows.Forms.Button btnCSelectionner;
+        private System.Windows.Forms.DataGridView dgProfesseurs;
+        private System.Windows.Forms.DataGridView dgChefDepartements;
     }
 }

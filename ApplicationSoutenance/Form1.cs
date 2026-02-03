@@ -43,6 +43,7 @@ namespace ApplicationSoutenance
                     // le mot de passe saisi est correct
                     //on se connecte
                     frmMdi f = new frmMdi();
+                    f.profil = "Admin";
                     f.Show();
                     this.Hide();
                 }

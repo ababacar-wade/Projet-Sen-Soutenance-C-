@@ -17,6 +17,7 @@ namespace ApplicationSoutenance
 {
     public partial class frmMdi : Form
     {
+        public string profil;
         public frmMdi()
         {
             InitializeComponent();
@@ -105,6 +106,11 @@ namespace ApplicationSoutenance
         /// <param name="e"></param>
         private void frmMdi_Load(object sender, EventArgs e)
         {
+            securiteToolStripMenuItem.Visible = false;
+            if (profil == "Admin")
+            {
+                securiteToolStripMenuItem.Visible = true;
+            }
             //si computer n'est pas charge -> reference (chercher visual et importer pour qu'il l prend en compte)
             Computer myComputer = new Computer();
             this.Width = myComputer.Screen.Bounds.Width;
