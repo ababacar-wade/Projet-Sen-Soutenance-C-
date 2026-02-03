@@ -1,4 +1,5 @@
 ﻿using ApplicationSoutenance.Models;
+using ApplicationSoutenance.Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,34 +27,42 @@ namespace ApplicationSoutenance
         //la methode pour se connecter sur l'application
         private void btnSeConnecter_Click(object sender, EventArgs e)
         {
-            // Récupère le mot de passe hashé de l'utilisateur
-            // dont le login correspond à celui saisi dans le champ txtIdentifiant1
-            string hash = bd.utilisateurs
-                .Where(a => a.Email == txtIdentifiant.Text)
-                .FirstOrDefault()
-                .MotDePasse;
-            // Création d'un objet MD5 pour travailler avec les hash
-            using (MD5 md5Hash = MD5.Create())
+            try
             {
-                // Vérifie si le hash du mot de passe saisi
-                // correspond au hash stocké dans la base de données
-                if (VerifyMd5Hash(md5Hash, txtMotDePasse.Text, hash))
+                // Récupère le mot de passe hashé de l'utilisateur
+                // dont le login correspond à celui saisi dans le champ txtIdentifiant1
+                string hash = bd.utilisateurs
+                    .Where(a => a.Email == txtIdentifiant.Text)
+                    .FirstOrDefault()
+                    .MotDePasse;
+                // Création d'un objet MD5 pour travailler avec les hash
+                using (MD5 md5Hash = MD5.Create())
                 {
-                    // Les deux hash sont identiques :
-                    // le mot de passe saisi est correct
-                    //on se connecte
-                    frmMdi f = new frmMdi();
-                    f.profil = "Admin";
-                    f.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    // Les hash sont différents :
-                    // le mot de passe saisi est incorrect
-                    MessageBox.Show("Mot de passe incorrect");
+                    // Vérifie si le hash du mot de passe saisi
+                    // correspond au hash stocké dans la base de données
+                    if (VerifyMd5Hash(md5Hash, txtMotDePasse.Text, hash))
+                    {
+                        // Les deux hash sont identiques :
+                        // le mot de passe saisi est correct
+                        //on se connecte
+                        frmMdi f = new frmMdi();
+                        f.profil = "Admin";
+                        f.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        // Les hash sont différents :
+                        // le mot de passe saisi est incorrect
+                        MessageBox.Show("Mot de passe incorrect");
+                    }
                 }
             }
+            catch (Exception ex) 
+            {
+                Logger.WriteDataError("frmConnexion-btnSeConnecter_Click", ex.ToString());
+            }
+           
         }
         // Méthode qui permet de vérifier si un mot de passe saisi
         // correspond au mot de passe hashé stocké dans la base de données

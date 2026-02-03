@@ -46,5 +46,7 @@ namespace ApplicationSoutenance.Models
         public DbSet<Candidat> candidats { get; set; }
         // DbSet représentant la table des departements
         public DbSet<Departement> departements { get; set; }
+
+        public DbSet<Td_Erreur> Td_Erreur { get; set; }
     }
 }

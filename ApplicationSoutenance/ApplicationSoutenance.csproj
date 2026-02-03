@@ -136,11 +136,13 @@
     <Compile Include="Models\Professeur.cs" />
     <Compile Include="Models\Session.cs" />
     <Compile Include="Models\Soutenance.cs" />
+    <Compile Include="Models\Td_Erreur.cs" />
     <Compile Include="Models\Utilisateur.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shared\Crypted.cs" />
     <Compile Include="Shared\FillerList.cs" />
+    <Compile Include="Shared\Logger.cs" />
     <Compile Include="Views\Account\frmUtilisateur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,7 +217,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Error\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
