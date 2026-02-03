@@ -350,5 +350,50 @@ namespace AppSenSoutenance.Views.Account
         {
             ChangerDeOnglet();
         }
+
+        // --- Event Handlers for Hover Effects (Candidat) ---
+        private void btnAjouter_MouseEnter(object sender, EventArgs e) => btnAjouter.BackColor = Color.FromArgb(39, 174, 96);
+        private void btnAjouter_MouseLeave(object sender, EventArgs e) => btnAjouter.BackColor = Color.FromArgb(46, 204, 113);
+
+        private void btnModifier_MouseEnter(object sender, EventArgs e) => btnModifier.BackColor = Color.FromArgb(243, 156, 18);
+        private void btnModifier_MouseLeave(object sender, EventArgs e) => btnModifier.BackColor = Color.FromArgb(241, 196, 15);
+
+        private void btnSupprimer_MouseEnter(object sender, EventArgs e) => btnSupprimer.BackColor = Color.FromArgb(192, 57, 43);
+        private void btnSupprimer_MouseLeave(object sender, EventArgs e) => btnSupprimer.BackColor = Color.FromArgb(231, 76, 60);
+
+        private void btnSelectionner_MouseEnter(object sender, EventArgs e) => btnSelectionner.BackColor = Color.FromArgb(41, 128, 185);
+        private void btnSelectionner_MouseLeave(object sender, EventArgs e) => btnSelectionner.BackColor = Color.FromArgb(52, 152, 219);
+
+
+        // --- Event Handlers for Hover Effects (Professeur) ---
+        private void btnPAjouter_MouseEnter(object sender, EventArgs e) => btnPAjouter.BackColor = Color.FromArgb(39, 174, 96);
+        private void btnPAjouter_MouseLeave(object sender, EventArgs e) => btnPAjouter.BackColor = Color.FromArgb(46, 204, 113);
+
+        private void btnPModifier_MouseEnter(object sender, EventArgs e) => btnPModifier.BackColor = Color.FromArgb(243, 156, 18);
+        private void btnPModifier_MouseLeave(object sender, EventArgs e) => btnPModifier.BackColor = Color.FromArgb(241, 196, 15);
+
+        private void btnPSupprimer_MouseEnter(object sender, EventArgs e) => btnPSupprimer.BackColor = Color.FromArgb(192, 57, 43);
+        private void btnPSupprimer_MouseLeave(object sender, EventArgs e) => btnPSupprimer.BackColor = Color.FromArgb(231, 76, 60);
+
+        private void btnPSelectionne_MouseEnter(object sender, EventArgs e) => btnPSelectionne.BackColor = Color.FromArgb(41, 128, 185);
+        private void btnPSelectionne_MouseLeave(object sender, EventArgs e) => btnPSelectionne.BackColor = Color.FromArgb(52, 152, 219);
+
+
+        // --- Event Handlers for Hover Effects (Chef Departement) ---
+        private void btnCAjouter_MouseEnter(object sender, EventArgs e) => btnCAjouter.BackColor = Color.FromArgb(39, 174, 96);
+        private void btnCAjouter_MouseLeave(object sender, EventArgs e) => btnCAjouter.BackColor = Color.FromArgb(46, 204, 113);
+
+        private void btnCModifier_MouseEnter(object sender, EventArgs e) => btnCModifier.BackColor = Color.FromArgb(243, 156, 18);
+        private void btnCModifier_MouseLeave(object sender, EventArgs e) => btnCModifier.BackColor = Color.FromArgb(241, 196, 15);
+
+        private void btnCSupprimer_MouseEnter(object sender, EventArgs e) => btnCSupprimer.BackColor = Color.FromArgb(192, 57, 43);
+        private void btnCSupprimer_MouseLeave(object sender, EventArgs e) => btnCSupprimer.BackColor = Color.FromArgb(231, 76, 60);
+
+        // Chef Dept uses btnCSelectionner but the method is button2_Click...
+        // I will assume the button name is btnCSelectionner based on Designer.
+        private void btnCSelectionner_MouseEnter(object sender, EventArgs e) => btnCSelectionner.BackColor = Color.FromArgb(41, 128, 185);
+        private void btnCSelectionner_MouseLeave(object sender, EventArgs e) => btnCSelectionner.BackColor = Color.FromArgb(52, 152, 219);
+
+       
     }
 }

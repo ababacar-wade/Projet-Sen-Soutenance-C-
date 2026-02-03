@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-
-
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtSpecialite = new System.Windows.Forms.TextBox();
@@ -50,11 +48,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgProfesseur = new System.Windows.Forms.DataGridView();
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.panelRight = new System.Windows.Forms.Panel();
             this.lblTitre = new System.Windows.Forms.Label();
+            this.panelRight = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgProfesseur)).BeginInit();
             this.panelLeft.SuspendLayout();
             this.panelRight.SuspendLayout();
@@ -282,6 +280,16 @@
             this.panelLeft.Size = new System.Drawing.Size(495, 748);
             this.panelLeft.TabIndex = 48;
             // 
+            // lblTitre
+            // 
+            this.lblTitre.AutoSize = true;
+            this.lblTitre.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitre.Location = new System.Drawing.Point(28, 35);
+            this.lblTitre.Name = "lblTitre";
+            this.lblTitre.Size = new System.Drawing.Size(303, 38);
+            this.lblTitre.TabIndex = 48;
+            this.lblTitre.Text = "Gestion des Professeur";
+            // 
             // panelRight
             // 
             this.panelRight.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -294,16 +302,6 @@
             this.panelRight.Size = new System.Drawing.Size(753, 748);
             this.panelRight.TabIndex = 49;
             // 
-            // lblTitre
-            // 
-            this.lblTitre.AutoSize = true;
-            this.lblTitre.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitre.Location = new System.Drawing.Point(28, 35);
-            this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(303, 38);
-            this.lblTitre.TabIndex = 48;
-            this.lblTitre.Text = "Gestion des Professeur";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
@@ -314,13 +312,6 @@
             this.panel1.Size = new System.Drawing.Size(460, 47);
             this.panel1.TabIndex = 46;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(212, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(345, 26);
-            this.textBox1.TabIndex = 0;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(122, 12);
@@ -329,6 +320,13 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(212, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(345, 26);
+            this.textBox1.TabIndex = 0;
             // 
             // frmProfesseur
             // 
