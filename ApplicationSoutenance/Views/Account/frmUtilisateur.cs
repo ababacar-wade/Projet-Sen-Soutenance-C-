@@ -106,17 +106,21 @@ namespace AppSenSoutenance.Views.Account
         /// </summary>
         private void ResetChefDepartement()
         {
-            dgChefDepartements.DataSource = bd.chefDepartements.Select(
-                cd => new
+            dgChefDepartements.DataSource = bd.chefDepartements
+                .Select(cd => new
                 {
                     cd.Idutilisateur,
                     cd.Nomutilisateur,
                     cd.PrenomUtilisateur,
                     cd.TelUtilisateur,
                     cd.Email,
-                    cd.DepartementId
-                }).ToList();
-            // Nettoyer les champs pour Chef de Departement
+
+                    // ✅ ON AFFICHE LE LIBELLÉ DU DÉPARTEMENT
+                    Departement = cd.Departement.Libelle
+                })
+                .ToList();
+
+            // Nettoyer les champs
             txtCNom.Clear();
             txtCPrenom.Clear();
             txtCEmail.Clear();
@@ -126,6 +130,8 @@ namespace AppSenSoutenance.Views.Account
             cbxDepartement.DisplayMember = "Text";
             cbxDepartement.ValueMember = "Value";
         }
+
+
         /// <summary>
         /// fonction pour changer d'onglet 
         /// </summary>
