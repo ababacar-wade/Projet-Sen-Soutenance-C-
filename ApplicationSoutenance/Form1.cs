@@ -39,6 +39,7 @@ namespace ApplicationSoutenance
                 // correspond au hash stocké dans la base de données
                 if (VerifyMd5Hash(md5Hash, txtMotDePasse.Text, hash))
                 {
+
                     // Les deux hash sont identiques :
                     // le mot de passe saisi est correct
                     //on se connecte

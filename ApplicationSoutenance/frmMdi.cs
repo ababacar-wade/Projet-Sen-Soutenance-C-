@@ -127,6 +127,13 @@ namespace ApplicationSoutenance
             f.WindowState = FormWindowState.Maximized;
         }
 
-        
+        private void departementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fermer();
+            frmDepartements f = new frmDepartements();
+            f.MdiParent = this;
+            f.Show();
+            f.WindowState = FormWindowState.Maximized;
+        }
     }
 }

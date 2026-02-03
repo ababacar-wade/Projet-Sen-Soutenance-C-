@@ -42,6 +42,7 @@
             this.lblTitre = new System.Windows.Forms.Label();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.lblFooter = new System.Windows.Forms.Label();
+            this.departementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.panelFooter.SuspendLayout();
@@ -77,14 +78,14 @@
             // seDeconnecterToolStripMenuItem
             // 
             this.seDeconnecterToolStripMenuItem.Name = "seDeconnecterToolStripMenuItem";
-            this.seDeconnecterToolStripMenuItem.Size = new System.Drawing.Size(270, 38);
+            this.seDeconnecterToolStripMenuItem.Size = new System.Drawing.Size(267, 38);
             this.seDeconnecterToolStripMenuItem.Text = "&Se déconnecter";
             this.seDeconnecterToolStripMenuItem.Click += new System.EventHandler(this.seDeconnecterToolStripMenuItem_Click);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(270, 38);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(267, 38);
             this.quitterToolStripMenuItem.Text = "&Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
@@ -93,7 +94,8 @@
             this.parametreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.anneeAcademiqueToolStripMenuItem,
             this.sessionToolStripMenuItem,
-            this.professeursToolStripMenuItem});
+            this.professeursToolStripMenuItem,
+            this.departementToolStripMenuItem});
             this.parametreToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.parametreToolStripMenuItem.Name = "parametreToolStripMenuItem";
             this.parametreToolStripMenuItem.Size = new System.Drawing.Size(137, 34);
@@ -179,6 +181,13 @@
             this.lblFooter.Text = "© 2026 Sen Soutenance - Tous droits réservés";
             this.lblFooter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // departementToolStripMenuItem
+            // 
+            this.departementToolStripMenuItem.Name = "departementToolStripMenuItem";
+            this.departementToolStripMenuItem.Size = new System.Drawing.Size(305, 38);
+            this.departementToolStripMenuItem.Text = "Departement";
+            this.departementToolStripMenuItem.Click += new System.EventHandler(this.departementToolStripMenuItem_Click);
+            // 
             // frmMdi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -223,5 +232,6 @@
         private System.Windows.Forms.Label lblTitre;
         private System.Windows.Forms.Panel panelFooter;
         private System.Windows.Forms.Label lblFooter;
+        private System.Windows.Forms.ToolStripMenuItem departementToolStripMenuItem;
     }
 }
