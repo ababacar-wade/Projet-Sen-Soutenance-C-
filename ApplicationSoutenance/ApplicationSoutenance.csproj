@@ -161,6 +161,12 @@
     <Compile Include="Views\Parametre\frmAnneeAcademique.Designer.cs">
       <DependentUpon>frmAnneeAcademique.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Parametre\frmMemoire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Parametre\frmMemoire.Designer.cs">
+      <DependentUpon>frmMemoire.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Parametre\frmProfesseur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,12 @@
     </Compile>
     <Compile Include="Views\Parametre\frmSession.Designer.cs">
       <DependentUpon>frmSession.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Parametre\frmSoutenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Parametre\frmSoutenance.Designer.cs">
+      <DependentUpon>frmSoutenance.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -197,11 +209,17 @@
     <EmbeddedResource Include="Views\Parametre\frmAnneeAcademique.resx">
       <DependentUpon>frmAnneeAcademique.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Parametre\frmMemoire.resx">
+      <DependentUpon>frmMemoire.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Parametre\frmProfesseur.resx">
       <DependentUpon>frmProfesseur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Parametre\frmSession.resx">
       <DependentUpon>frmSession.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Parametre\frmSoutenance.resx">
+      <DependentUpon>frmSoutenance.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

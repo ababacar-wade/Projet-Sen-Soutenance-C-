@@ -29,17 +29,24 @@ namespace ApplicationSoutenance
         {
             try
             {
-                // Récupère le mot de passe hashé de l'utilisateur
-                string hash = bd.utilisateurs
-                    .Where(a => a.Email == txtIdentifiant.Text)
-                    .FirstOrDefault()
-                    .MotDePasse;
+                if (string.IsNullOrWhiteSpace(txtIdentifiant.Text) || string.IsNullOrWhiteSpace(txtMotDePasse.Text))
+                {
+                    MessageBox.Show("Veuillez renseigner tous les champs.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-                // Création d'un objet MD5
+                var utilisateur = bd.utilisateurs
+                    .FirstOrDefault(a => a.Email == txtIdentifiant.Text);
+
+                if (utilisateur == null)
+                {
+                    MessageBox.Show("Email ou Mot de passe incorrect");
+                    return;
+                }
+
                 using (MD5 md5Hash = MD5.Create())
                 {
-                    // Vérifie si le mot de passe saisi correspond au hash stocké
-                    if (VerifyMd5Hash(md5Hash, txtMotDePasse.Text, hash))
+                    if (VerifyMd5Hash(md5Hash, txtMotDePasse.Text, utilisateur.MotDePasse))
                     {
                         frmMdi f = new frmMdi();
                         f.profil = "Admin";
@@ -48,14 +55,16 @@ namespace ApplicationSoutenance
                     }
                     else
                     {
-                        MessageBox.Show("Mot de passe incorrect");
+                        MessageBox.Show("Email ou Mot de passe incorrect");
                     }
                 }
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Erreur technique, voir le log");
                 Logger.WriteDataError("frmConnexion-btnSeConnecter_Click", ex.ToString());
             }
+
 
 
         }

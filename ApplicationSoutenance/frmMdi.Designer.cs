@@ -36,13 +36,15 @@
             this.anneeAcademiqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.professeursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.departementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.securiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblTitre = new System.Windows.Forms.Label();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.lblFooter = new System.Windows.Forms.Label();
-            this.departementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.soutenanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.memoireToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.panelFooter.SuspendLayout();
@@ -95,7 +97,9 @@
             this.anneeAcademiqueToolStripMenuItem,
             this.sessionToolStripMenuItem,
             this.professeursToolStripMenuItem,
-            this.departementToolStripMenuItem});
+            this.departementToolStripMenuItem,
+            this.soutenanceToolStripMenuItem,
+            this.memoireToolStripMenuItem});
             this.parametreToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.parametreToolStripMenuItem.Name = "parametreToolStripMenuItem";
             this.parametreToolStripMenuItem.Size = new System.Drawing.Size(137, 34);
@@ -121,6 +125,13 @@
             this.professeursToolStripMenuItem.Size = new System.Drawing.Size(305, 38);
             this.professeursToolStripMenuItem.Text = "&Professeurs";
             this.professeursToolStripMenuItem.Click += new System.EventHandler(this.professeursToolStripMenuItem_Click);
+            // 
+            // departementToolStripMenuItem
+            // 
+            this.departementToolStripMenuItem.Name = "departementToolStripMenuItem";
+            this.departementToolStripMenuItem.Size = new System.Drawing.Size(305, 38);
+            this.departementToolStripMenuItem.Text = "&Departement";
+            this.departementToolStripMenuItem.Click += new System.EventHandler(this.departementToolStripMenuItem_Click);
             // 
             // securiteToolStripMenuItem
             // 
@@ -181,12 +192,19 @@
             this.lblFooter.Text = "© 2026 Sen Soutenance - Tous droits réservés";
             this.lblFooter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // departementToolStripMenuItem
+            // soutenanceToolStripMenuItem
             // 
-            this.departementToolStripMenuItem.Name = "departementToolStripMenuItem";
-            this.departementToolStripMenuItem.Size = new System.Drawing.Size(305, 38);
-            this.departementToolStripMenuItem.Text = "Departement";
-            this.departementToolStripMenuItem.Click += new System.EventHandler(this.departementToolStripMenuItem_Click);
+            this.soutenanceToolStripMenuItem.Name = "soutenanceToolStripMenuItem";
+            this.soutenanceToolStripMenuItem.Size = new System.Drawing.Size(305, 38);
+            this.soutenanceToolStripMenuItem.Text = "&Soutenance";
+            this.soutenanceToolStripMenuItem.Click += new System.EventHandler(this.soutenanceToolStripMenuItem_Click);
+            // 
+            // memoireToolStripMenuItem
+            // 
+            this.memoireToolStripMenuItem.Name = "memoireToolStripMenuItem";
+            this.memoireToolStripMenuItem.Size = new System.Drawing.Size(305, 38);
+            this.memoireToolStripMenuItem.Text = "&Memoire";
+            this.memoireToolStripMenuItem.Click += new System.EventHandler(this.memoireToolStripMenuItem_Click);
             // 
             // frmMdi
             // 
@@ -233,5 +251,7 @@
         private System.Windows.Forms.Panel panelFooter;
         private System.Windows.Forms.Label lblFooter;
         private System.Windows.Forms.ToolStripMenuItem departementToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem soutenanceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem memoireToolStripMenuItem;
     }
 }

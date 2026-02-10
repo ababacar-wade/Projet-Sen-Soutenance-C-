@@ -135,5 +135,21 @@ namespace ApplicationSoutenance
             f.Show();
             f.WindowState = FormWindowState.Maximized;
         }
+
+        private void soutenanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSoutenance f = new frmSoutenance();
+            f.MdiParent = this;
+            f.Show();
+            f.WindowState = FormWindowState.Maximized;
+        }
+
+        private void memoireToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMemoire f = new frmMemoire();
+            f.MdiParent = this;
+            f.Show();
+            f.WindowState = FormWindowState.Maximized;
+        }
     }
 }
