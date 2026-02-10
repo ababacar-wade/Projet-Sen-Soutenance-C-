@@ -29,40 +29,67 @@ namespace ApplicationSoutenance
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtIdentifiant.Text) || string.IsNullOrWhiteSpace(txtMotDePasse.Text))
+                // Vérifie si l'identifiant ou le mot de passe est vide ou contient uniquement des espaces
+                if (string.IsNullOrWhiteSpace(txtIdentifiant.Text) ||
+                    string.IsNullOrWhiteSpace(txtMotDePasse.Text))
                 {
-                    MessageBox.Show("Veuillez renseigner tous les champs.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    // Message d’avertissement si un champ n’est pas rempli
+                    MessageBox.Show(
+                        "Veuillez renseigner tous les champs.",
+                        "Validation",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                    return; // Arrête l’exécution de la méthode
                 }
 
+                // Recherche de l’utilisateur dans la base de données à partir de l’email
                 var utilisateur = bd.utilisateurs
                     .FirstOrDefault(a => a.Email == txtIdentifiant.Text);
 
+                // Si aucun utilisateur n’est trouvé
                 if (utilisateur == null)
                 {
+                    // Message générique pour éviter de révéler si l’email existe ou non
                     MessageBox.Show("Email ou Mot de passe incorrect");
                     return;
                 }
 
+                // Création d’un objet MD5 pour vérifier le mot de passe chiffré
                 using (MD5 md5Hash = MD5.Create())
                 {
+                    // Vérifie si le mot de passe saisi correspond au mot de passe stocké
                     if (VerifyMd5Hash(md5Hash, txtMotDePasse.Text, utilisateur.MotDePasse))
                     {
+                        // Ouverture de la fenêtre principale après authentification réussie
                         frmMdi f = new frmMdi();
+
+                        // Définition du profil utilisateur
                         f.profil = "Admin";
+
+                        // Affichage du formulaire principal
                         f.Show();
+
+                        // Masque la fenêtre de connexion
                         this.Hide();
                     }
                     else
                     {
+                        // Mot de passe incorrect
                         MessageBox.Show("Email ou Mot de passe incorrect");
                     }
                 }
             }
             catch (Exception ex)
             {
+                // Message générique pour l’utilisateur en cas d’erreur technique
                 MessageBox.Show("Erreur technique, voir le log");
-                Logger.WriteDataError("frmConnexion-btnSeConnecter_Click", ex.ToString());
+
+                // Enregistrement de l’erreur dans le fichier de log
+                Logger.WriteDataError(
+                    "frmConnexion-btnSeConnecter_Click",
+                    ex.ToString()
+                );
             }
 
 
