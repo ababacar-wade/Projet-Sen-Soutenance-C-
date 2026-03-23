@@ -1,4 +1,4 @@
-﻿using ApplicationSoutenance.Models;
+using ApplicationSoutenance.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -86,6 +86,26 @@ namespace AppSenSoutenance.Shared
             }
 
             // Retourne la liste complète avec toutes les années académiques
+            return laListe;
+        }
+
+        public List<ListItem> fillSession()
+        {
+            List<ListItem> laListe = new List<ListItem>();
+            var liste = bd.sessions.ToList();
+            laListe.Add(new ListItem
+            {
+                Value = 0,
+                Text = "Sélectionner"
+            });
+            foreach (var t in liste)
+            {
+                laListe.Add(new ListItem
+                {
+                    Value = t.IdSession,
+                    Text = t.LibelleSession
+                });
+            }
             return laListe;
         }
     }

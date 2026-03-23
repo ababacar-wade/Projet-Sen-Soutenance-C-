@@ -1,4 +1,4 @@
-﻿namespace ApplicationSoutenance.Views.Parametre
+namespace ApplicationSoutenance.Views.Parametre
 {
     partial class frmMemoire
     {
@@ -28,20 +28,376 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtRAnneeAcademique = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtRSession = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbxAnneeAcademique = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtSujetMemoire = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSlectionner = new System.Windows.Forms.Button();
+            this.btnModifier = new System.Windows.Forms.Button();
+            this.btnSupprimer = new System.Windows.Forms.Button();
+            this.btnAjouter = new System.Windows.Forms.Button();
+            this.dgMemoire = new System.Windows.Forms.DataGridView();
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.lblTitre = new System.Windows.Forms.Label();
+            this.panelSearch = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtRSujetMemoire = new System.Windows.Forms.TextBox();
+            this.panelForm = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbxSession = new System.Windows.Forms.ComboBox();
+            this.panelButtons = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.dgMemoire)).BeginInit();
+            this.panelHeader.SuspendLayout();
+            this.panelSearch.SuspendLayout();
+            this.panelForm.SuspendLayout();
+            this.panelButtons.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panelHeader
+            // 
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.panelHeader.Controls.Add(this.lblTitre);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(1170, 80);
+            this.panelHeader.TabIndex = 34;
+            // 
+            // lblTitre
+            // 
+            this.lblTitre.AutoSize = true;
+            this.lblTitre.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.lblTitre.ForeColor = System.Drawing.Color.White;
+            this.lblTitre.Location = new System.Drawing.Point(30, 20);
+            this.lblTitre.Name = "lblTitre";
+            this.lblTitre.Size = new System.Drawing.Size(161, 46);
+            this.lblTitre.TabIndex = 0;
+            this.lblTitre.Text = "Mémoire";
+            // 
+            // panelSearch
+            // 
+            this.panelSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelSearch.BackColor = System.Drawing.Color.White;
+            this.panelSearch.Controls.Add(this.label5);
+            this.panelSearch.Controls.Add(this.txtRSujetMemoire);
+            this.panelSearch.Controls.Add(this.label3);
+            this.panelSearch.Controls.Add(this.txtRSession);
+            this.panelSearch.Controls.Add(this.label4);
+            this.panelSearch.Controls.Add(this.txtRAnneeAcademique);
+            this.panelSearch.Controls.Add(this.btnSearch);
+            this.panelSearch.Location = new System.Drawing.Point(450, 110);
+            this.panelSearch.Name = "panelSearch";
+            this.panelSearch.Size = new System.Drawing.Size(690, 120);
+            this.panelSearch.TabIndex = 35;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.label5.Location = new System.Drawing.Point(20, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 25);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Sujet";
+            // 
+            // txtRSujetMemoire
+            // 
+            this.txtRSujetMemoire.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRSujetMemoire.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtRSujetMemoire.Location = new System.Drawing.Point(20, 55);
+            this.txtRSujetMemoire.Name = "txtRSujetMemoire";
+            this.txtRSujetMemoire.Size = new System.Drawing.Size(150, 32);
+            this.txtRSujetMemoire.TabIndex = 34;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.label3.Location = new System.Drawing.Point(180, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 25);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "Session";
+            // 
+            // txtRSession
+            // 
+            this.txtRSession.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRSession.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtRSession.Location = new System.Drawing.Point(180, 55);
+            this.txtRSession.Name = "txtRSession";
+            this.txtRSession.Size = new System.Drawing.Size(150, 32);
+            this.txtRSession.TabIndex = 29;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.label4.Location = new System.Drawing.Point(340, 20);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 25);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "Année";
+            // 
+            // txtRAnneeAcademique
+            // 
+            this.txtRAnneeAcademique.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRAnneeAcademique.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtRAnneeAcademique.Location = new System.Drawing.Point(340, 55);
+            this.txtRAnneeAcademique.Name = "txtRAnneeAcademique";
+            this.txtRAnneeAcademique.Size = new System.Drawing.Size(150, 32);
+            this.txtRAnneeAcademique.TabIndex = 31;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(520, 40);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(150, 50);
+            this.btnSearch.TabIndex = 33;
+            this.btnSearch.Text = "Rechercher";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // panelForm
+            // 
+            this.panelForm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelForm.BackColor = System.Drawing.Color.White;
+            this.panelForm.Controls.Add(this.label6);
+            this.panelForm.Controls.Add(this.cbxSession);
+            this.panelForm.Controls.Add(this.label1);
+            this.panelForm.Controls.Add(this.txtSujetMemoire);
+            this.panelForm.Controls.Add(this.label2);
+            this.panelForm.Controls.Add(this.cbxAnneeAcademique);
+            this.panelForm.Location = new System.Drawing.Point(30, 110);
+            this.panelForm.Name = "panelForm";
+            this.panelForm.Size = new System.Drawing.Size(400, 330);
+            this.panelForm.TabIndex = 36;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.label6.Location = new System.Drawing.Point(30, 230);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 25);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Session";
+            // 
+            // cbxSession
+            // 
+            this.cbxSession.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxSession.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxSession.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.cbxSession.FormattingEnabled = true;
+            this.cbxSession.Location = new System.Drawing.Point(30, 265);
+            this.cbxSession.Name = "cbxSession";
+            this.cbxSession.Size = new System.Drawing.Size(340, 33);
+            this.cbxSession.TabIndex = 29;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.label1.Location = new System.Drawing.Point(30, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 25);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Sujet";
+            // 
+            // txtSujetMemoire
+            // 
+            this.txtSujetMemoire.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSujetMemoire.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSujetMemoire.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtSujetMemoire.Location = new System.Drawing.Point(30, 65);
+            this.txtSujetMemoire.Multiline = true;
+            this.txtSujetMemoire.Name = "txtSujetMemoire";
+            this.txtSujetMemoire.Size = new System.Drawing.Size(340, 60);
+            this.txtSujetMemoire.TabIndex = 25;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.label2.Location = new System.Drawing.Point(30, 140);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(177, 25);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Année Académique";
+            // 
+            // cbxAnneeAcademique
+            // 
+            this.cbxAnneeAcademique.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxAnneeAcademique.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxAnneeAcademique.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.cbxAnneeAcademique.FormattingEnabled = true;
+            this.cbxAnneeAcademique.Location = new System.Drawing.Point(30, 175);
+            this.cbxAnneeAcademique.Name = "cbxAnneeAcademique";
+            this.cbxAnneeAcademique.Size = new System.Drawing.Size(340, 33);
+            this.cbxAnneeAcademique.TabIndex = 28;
+            // 
+            // panelButtons
+            // 
+            this.panelButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelButtons.BackColor = System.Drawing.Color.White;
+            this.panelButtons.Controls.Add(this.btnSlectionner);
+            this.panelButtons.Controls.Add(this.btnAjouter);
+            this.panelButtons.Controls.Add(this.btnModifier);
+            this.panelButtons.Controls.Add(this.btnSupprimer);
+            this.panelButtons.Location = new System.Drawing.Point(30, 460);
+            this.panelButtons.Name = "panelButtons";
+            this.panelButtons.Size = new System.Drawing.Size(400, 250);
+            this.panelButtons.TabIndex = 37;
+            // 
+            // btnSlectionner
+            // 
+            this.btnSlectionner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.btnSlectionner.FlatAppearance.BorderSize = 0;
+            this.btnSlectionner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSlectionner.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSlectionner.ForeColor = System.Drawing.Color.White;
+            this.btnSlectionner.Location = new System.Drawing.Point(210, 170);
+            this.btnSlectionner.Name = "btnSlectionner";
+            this.btnSlectionner.Size = new System.Drawing.Size(160, 50);
+            this.btnSlectionner.TabIndex = 24;
+            this.btnSlectionner.Text = "Sélectionner";
+            this.btnSlectionner.UseVisualStyleBackColor = false;
+            this.btnSlectionner.Click += new System.EventHandler(this.btnSlectionner_Click);
+            // 
+            // btnAjouter
+            // 
+            this.btnAjouter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.btnAjouter.FlatAppearance.BorderSize = 0;
+            this.btnAjouter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAjouter.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnAjouter.ForeColor = System.Drawing.Color.White;
+            this.btnAjouter.Location = new System.Drawing.Point(30, 30);
+            this.btnAjouter.Name = "btnAjouter";
+            this.btnAjouter.Size = new System.Drawing.Size(160, 50);
+            this.btnAjouter.TabIndex = 21;
+            this.btnAjouter.Text = "Ajouter";
+            this.btnAjouter.UseVisualStyleBackColor = false;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
+            // 
+            // btnModifier
+            // 
+            this.btnModifier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
+            this.btnModifier.FlatAppearance.BorderSize = 0;
+            this.btnModifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModifier.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnModifier.ForeColor = System.Drawing.Color.White;
+            this.btnModifier.Location = new System.Drawing.Point(210, 30);
+            this.btnModifier.Name = "btnModifier";
+            this.btnModifier.Size = new System.Drawing.Size(160, 50);
+            this.btnModifier.TabIndex = 22;
+            this.btnModifier.Text = "Modifier";
+            this.btnModifier.UseVisualStyleBackColor = false;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
+            // 
+            // btnSupprimer
+            // 
+            this.btnSupprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.btnSupprimer.FlatAppearance.BorderSize = 0;
+            this.btnSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSupprimer.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSupprimer.ForeColor = System.Drawing.Color.White;
+            this.btnSupprimer.Location = new System.Drawing.Point(30, 170);
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.Size = new System.Drawing.Size(160, 50);
+            this.btnSupprimer.TabIndex = 23;
+            this.btnSupprimer.Text = "Supprimer";
+            this.btnSupprimer.UseVisualStyleBackColor = false;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
+            // 
+            // dgMemoire
+            // 
+            this.dgMemoire.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgMemoire.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgMemoire.BackgroundColor = System.Drawing.Color.White;
+            this.dgMemoire.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgMemoire.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgMemoire.Location = new System.Drawing.Point(450, 250);
+            this.dgMemoire.Name = "dgMemoire";
+            this.dgMemoire.RowHeadersWidth = 62;
+            this.dgMemoire.RowTemplate.Height = 28;
+            this.dgMemoire.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgMemoire.Size = new System.Drawing.Size(690, 460);
+            this.dgMemoire.TabIndex = 20;
             // 
             // frmMemoire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1129, 718);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.ClientSize = new System.Drawing.Size(1170, 718);
             this.ControlBox = false;
+            this.Controls.Add(this.panelButtons);
+            this.Controls.Add(this.panelForm);
+            this.Controls.Add(this.panelSearch);
+            this.Controls.Add(this.panelHeader);
+            this.Controls.Add(this.dgMemoire);
             this.Name = "frmMemoire";
             this.Text = "Memoire";
+            this.Load += new System.EventHandler(this.frmMemoire_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgMemoire)).EndInit();
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
+            this.panelSearch.ResumeLayout(false);
+            this.panelSearch.PerformLayout();
+            this.panelForm.ResumeLayout(false);
+            this.panelForm.PerformLayout();
+            this.panelButtons.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtRAnneeAcademique;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtRSession;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbxAnneeAcademique;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtSujetMemoire;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSlectionner;
+        private System.Windows.Forms.Button btnModifier;
+        private System.Windows.Forms.Button btnSupprimer;
+        private System.Windows.Forms.Button btnAjouter;
+        private System.Windows.Forms.DataGridView dgMemoire;
+        private System.Windows.Forms.Panel panelHeader;
+        private System.Windows.Forms.Label lblTitre;
+        private System.Windows.Forms.Panel panelSearch;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtRSujetMemoire;
+        private System.Windows.Forms.Panel panelForm;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cbxSession;
+        private System.Windows.Forms.Panel panelButtons;
     }
 }
