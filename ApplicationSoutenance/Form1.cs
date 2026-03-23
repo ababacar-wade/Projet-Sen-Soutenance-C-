@@ -141,5 +141,10 @@ namespace ApplicationSoutenance
         {
             btnQuitter.BackColor = System.Drawing.Color.FromArgb(231, 76, 60);
         }
+
+        private void frmConnexion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

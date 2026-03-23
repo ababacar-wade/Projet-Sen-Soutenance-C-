@@ -151,5 +151,10 @@ namespace ApplicationSoutenance
             f.Show();
             f.WindowState = FormWindowState.Maximized;
         }
+
+        private void panelHeader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

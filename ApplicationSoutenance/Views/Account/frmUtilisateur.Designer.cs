@@ -118,7 +118,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1924, 700);
+            this.tabControl1.Size = new System.Drawing.Size(1924, 744);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -131,7 +131,7 @@
             this.tabCandidat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabCandidat.Name = "tabCandidat";
             this.tabCandidat.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabCandidat.Size = new System.Drawing.Size(1916, 659);
+            this.tabCandidat.Size = new System.Drawing.Size(1916, 703);
             this.tabCandidat.TabIndex = 0;
             this.tabCandidat.Text = "Candidat";
             // 
@@ -147,7 +147,7 @@
             this.dgCandidats.Name = "dgCandidats";
             this.dgCandidats.RowHeadersWidth = 62;
             this.dgCandidats.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgCandidats.Size = new System.Drawing.Size(1263, 649);
+            this.dgCandidats.Size = new System.Drawing.Size(1263, 693);
             this.dgCandidats.TabIndex = 1;
             // 
             // panelLeftCandidat
@@ -158,7 +158,7 @@
             this.panelLeftCandidat.Location = new System.Drawing.Point(4, 5);
             this.panelLeftCandidat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelLeftCandidat.Name = "panelLeftCandidat";
-            this.panelLeftCandidat.Size = new System.Drawing.Size(645, 649);
+            this.panelLeftCandidat.Size = new System.Drawing.Size(645, 693);
             this.panelLeftCandidat.TabIndex = 4;
             // 
             // panelFormCandidat
@@ -178,7 +178,7 @@
             this.panelFormCandidat.Location = new System.Drawing.Point(0, 0);
             this.panelFormCandidat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelFormCandidat.Name = "panelFormCandidat";
-            this.panelFormCandidat.Size = new System.Drawing.Size(645, 513);
+            this.panelFormCandidat.Size = new System.Drawing.Size(645, 533);
             this.panelFormCandidat.TabIndex = 2;
             // 
             // label1
@@ -290,10 +290,10 @@
             this.panelButtonsCandidat.Controls.Add(this.btnSupprimer);
             this.panelButtonsCandidat.Controls.Add(this.btnSelectionner);
             this.panelButtonsCandidat.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelButtonsCandidat.Location = new System.Drawing.Point(0, 513);
+            this.panelButtonsCandidat.Location = new System.Drawing.Point(0, 533);
             this.panelButtonsCandidat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelButtonsCandidat.Name = "panelButtonsCandidat";
-            this.panelButtonsCandidat.Size = new System.Drawing.Size(645, 136);
+            this.panelButtonsCandidat.Size = new System.Drawing.Size(645, 160);
             this.panelButtonsCandidat.TabIndex = 3;
             // 
             // btnAjouter
@@ -874,7 +874,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 823);
+            this.ClientSize = new System.Drawing.Size(1924, 867);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panelHeader);
