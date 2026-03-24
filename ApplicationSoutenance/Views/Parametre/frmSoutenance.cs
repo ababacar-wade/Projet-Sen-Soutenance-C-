@@ -101,5 +101,17 @@ namespace ApplicationSoutenance.Views.Parametre
             txtEmail.Text = soutenance.EmailUtilisateur;
 
         }
+
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+            var liste = bd.soutenances.ToList();
+            // filtre la liste des soutenances par nom ou prenom qui contient le texte recherché
+            if (!string.IsNullOrEmpty(txtRNom.Text))
+            {
+                liste = liste.Where(s => s.NomUtilisateur.Contains(txtRNom.Text) || s.PrenomUtilisateur.Contains(txtRPrenom.Text)).ToList();
+            }
+            dgSoutenance.DataSource = liste;
+
+        }
     }
 }

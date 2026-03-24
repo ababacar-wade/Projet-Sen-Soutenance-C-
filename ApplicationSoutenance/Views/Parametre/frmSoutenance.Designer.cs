@@ -76,6 +76,7 @@ namespace ApplicationSoutenance.Views.Parametre
             this.btnSearch.TabIndex = 33;
             this.btnSearch.Text = "Rechercher";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
             this.btnSearch.MouseEnter += new System.EventHandler(this.btnSearch_MouseEnter);
             this.btnSearch.MouseLeave += new System.EventHandler(this.btnSearch_MouseLeave);
             // 
