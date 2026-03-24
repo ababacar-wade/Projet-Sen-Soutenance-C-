@@ -14,6 +14,7 @@ namespace ApplicationSoutenance.Views.Parametre
     // Formulaire de gestion des années académiques
     public partial class frmProfesseur : Form
     {
+        public string profil;
         public frmProfesseur()
         {
             InitializeComponent();
@@ -24,6 +25,12 @@ namespace ApplicationSoutenance.Views.Parametre
         private void frmProfesseur_Load(object sender, EventArgs e)
         {
             Effacer();
+            if (profil != "Admin" && profil != "Chefdepartement")
+            {
+                btnAjouter.Enabled = false;
+                btnModifier.Enabled = false;
+                btnSupprimer.Enabled = false;
+            }
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)

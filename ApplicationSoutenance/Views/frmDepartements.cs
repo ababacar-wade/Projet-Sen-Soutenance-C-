@@ -1,4 +1,4 @@
-﻿using ApplicationSoutenance.Models;
+using ApplicationSoutenance.Models;
 using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
@@ -14,6 +14,7 @@ namespace ApplicationSoutenance.Views
 {
     public partial class frmDepartements : Form
     {
+        public string profil;
         public frmDepartements()
         {
             InitializeComponent();
@@ -66,6 +67,12 @@ namespace ApplicationSoutenance.Views
         private void frmDepartements_Load(object sender, EventArgs e)
         {
            Effacer();
+           if (profil != "Admin" && profil != "Chefdepartement")
+           {
+               btnAjouter.Enabled = false;
+               btnModifier.Enabled = false;
+               btnSupprimer.Enabled = false;
+           }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

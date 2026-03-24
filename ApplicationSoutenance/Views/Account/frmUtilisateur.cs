@@ -1,4 +1,4 @@
-﻿
+
 using ApplicationSoutenance.Models;
 using ApplicationSoutenance.Shared;
 using System;
@@ -16,6 +16,7 @@ namespace ApplicationSoutenance.Views.Account
 {
     public partial class frmUtilisateur : Form
     {
+        public string profil;
         public frmUtilisateur()
         {
             InitializeComponent();

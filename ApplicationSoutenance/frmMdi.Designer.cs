@@ -80,14 +80,14 @@
             // seDeconnecterToolStripMenuItem
             // 
             this.seDeconnecterToolStripMenuItem.Name = "seDeconnecterToolStripMenuItem";
-            this.seDeconnecterToolStripMenuItem.Size = new System.Drawing.Size(270, 38);
+            this.seDeconnecterToolStripMenuItem.Size = new System.Drawing.Size(267, 38);
             this.seDeconnecterToolStripMenuItem.Text = "&Se déconnecter";
             this.seDeconnecterToolStripMenuItem.Click += new System.EventHandler(this.seDeconnecterToolStripMenuItem_Click);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(270, 38);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(267, 38);
             this.quitterToolStripMenuItem.Text = "&Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
@@ -159,7 +159,7 @@
             // utilisateurToolStripMenuItem
             // 
             this.utilisateurToolStripMenuItem.Name = "utilisateurToolStripMenuItem";
-            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(270, 38);
+            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(212, 38);
             this.utilisateurToolStripMenuItem.Text = "&Utilisateur";
             this.utilisateurToolStripMenuItem.Click += new System.EventHandler(this.utilisateurToolStripMenuItem_Click);
             // 
@@ -172,7 +172,6 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(1162, 100);
             this.panelHeader.TabIndex = 2;
-            this.panelHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeader_Paint);
             // 
             // lblTitre
             // 

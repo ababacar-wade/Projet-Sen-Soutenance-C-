@@ -1,4 +1,4 @@
-﻿using ApplicationSoutenance.Models;
+using ApplicationSoutenance.Models;
 using ApplicationSoutenance.Shared;
 using System;
 using System.Collections.Generic;
@@ -14,6 +14,7 @@ namespace ApplicationSoutenance.Views.Parametre
 {
     public partial class frmSession : Form
     {
+        public string profil;
         public frmSession()
         {
             InitializeComponent();
@@ -143,6 +144,12 @@ namespace ApplicationSoutenance.Views.Parametre
         private void frmSession_Load(object sender, EventArgs e)
         {
             Effacer();
+            if (profil != "Admin" && profil != "Chefdepartement")
+            {
+                btnAjouter.Enabled = false;
+                btnModifier.Enabled = false;
+                btnSupprimer.Enabled = false;
+            }
         }
 
         /// <summary>

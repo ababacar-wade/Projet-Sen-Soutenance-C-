@@ -1,4 +1,4 @@
-﻿// Importation des modèles (entités) de l’application
+// Importation des modèles (entités) de l’application
 using ApplicationSoutenance.Models;
 
 // Importation des bibliothèques système nécessaires
@@ -17,6 +17,7 @@ namespace ApplicationSoutenance.Views.Parametre
     // Formulaire de gestion des années académiques
     public partial class frmAnneeAcademique : Form
     {
+        public string profil;
         // Constructeur du formulaire
         public frmAnneeAcademique()
         {
@@ -71,6 +72,12 @@ namespace ApplicationSoutenance.Views.Parametre
         {
             // Chargement des données dans le DataGridView
             dgAnneeAcademique.DataSource = bd.anneeAcademiques.ToList();
+            if (profil != "Admin" && profil != "Chefdepartement")
+            {
+                btnAjouter.Enabled = false;
+                btnModifier.Enabled = false;
+                btnSupprimer.Enabled = false;
+            }
         }
 
         // Événement du bouton Sélectionner

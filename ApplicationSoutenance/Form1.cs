@@ -1,4 +1,4 @@
-﻿using ApplicationSoutenance.Models;
+using ApplicationSoutenance.Models;
 using ApplicationSoutenance.Shared;
 using System;
 using System.Collections.Generic;
@@ -64,8 +64,12 @@ namespace ApplicationSoutenance
                         // Ouverture de la fenêtre principale après authentification réussie
                         frmMdi f = new frmMdi();
 
-                        // Définition du profil utilisateur
-                        f.profil = "Admin";
+                        // Définition du profil utilisateur dynamiquement
+                        if (utilisateur is Admin) f.profil = "Admin";
+                        else if (utilisateur is ChefDepartement) f.profil = "Chefdepartement";
+                        else if (utilisateur is Professeur) f.profil = "Professeur";
+                        else if (utilisateur is Candidat) f.profil = "Candidat";
+                        else f.profil = "Inconnu";
 
                         // Affichage du formulaire principal
                         f.Show();

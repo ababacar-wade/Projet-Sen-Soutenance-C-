@@ -1,4 +1,4 @@
-﻿using ApplicationSoutenance.Models;
+using ApplicationSoutenance.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +14,7 @@ namespace ApplicationSoutenance.Views.Parametre
 {
     public partial class frmSoutenance : Form
     {
+        public string profil;
         public frmSoutenance()
         {
             InitializeComponent();
@@ -39,6 +40,12 @@ namespace ApplicationSoutenance.Views.Parametre
         private void frmSoutenance_Load(object sender, EventArgs e)
         {
             Effacer();
+            if (profil != "Admin" && profil != "Chefdepartement")
+            {
+                btnAjouter.Enabled = false;
+                btnModifier.Enabled = false;
+                btnSupprimer.Enabled = false;
+            }
         }
 
         private void panelHeader_Paint(object sender, PaintEventArgs e)

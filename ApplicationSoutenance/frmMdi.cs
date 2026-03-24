@@ -1,4 +1,4 @@
-﻿using ApplicationSoutenance.Views;
+using ApplicationSoutenance.Views;
 using ApplicationSoutenance.Views.Parametre;
 using ApplicationSoutenance.Views.Account;
 using Microsoft.VisualBasic.Devices;
@@ -48,6 +48,7 @@ namespace ApplicationSoutenance
             fermer();
             // instancifier le formulaire annee academique
             frmAnneeAcademique f = new frmAnneeAcademique();
+            f.profil = this.profil;
             //on dit a l'objet f qu'on a cree, voici votre pere (frmMdi)
             f.MdiParent = this;
             // afficher
@@ -65,6 +66,7 @@ namespace ApplicationSoutenance
         {
             fermer();
             frmSession f = new frmSession();
+            f.profil = this.profil;
             f.MdiParent = this;
             f.Show();
             f.WindowState = FormWindowState.Maximized;
@@ -79,6 +81,7 @@ namespace ApplicationSoutenance
         {
             fermer();
             frmProfesseur f = new frmProfesseur();
+            f.profil = this.profil;
             f.MdiParent = this;
             f.Show();
             f.WindowState = FormWindowState.Maximized;
@@ -106,11 +109,20 @@ namespace ApplicationSoutenance
         /// <param name="e"></param>
         private void frmMdi_Load(object sender, EventArgs e)
         {
-            securiteToolStripMenuItem.Visible = false;
-            if (profil == "Admin")
-            {
-                securiteToolStripMenuItem.Visible = true;
-            }
+            // Initialisation de la visibilité des menus selon le profil
+            securiteToolStripMenuItem.Visible = (profil == "Admin");
+            
+            // Paramètres : Visible si Admin ou Chefdepartement pour tout, 
+            // sinon restreint pour Professeur et Candidat
+            anneeAcademiqueToolStripMenuItem.Visible = (profil == "Admin" || profil == "Chefdepartement");
+            departementToolStripMenuItem.Visible = (profil == "Admin" || profil == "Chefdepartement");
+            
+            sessionToolStripMenuItem.Visible = (profil != "Candidat");
+            professeursToolStripMenuItem.Visible = (profil != "Candidat");
+            
+            // Soutenance et Mémoire sont visibles pour tout le monde
+            soutenanceToolStripMenuItem.Visible = true;
+            memoireToolStripMenuItem.Visible = true;
             //si computer n'est pas charge -> reference (chercher visual et importer pour qu'il l prend en compte)
             Computer myComputer = new Computer();
             this.Width = myComputer.Screen.Bounds.Width;
@@ -122,6 +134,7 @@ namespace ApplicationSoutenance
         {
             fermer();
             frmUtilisateur f = new frmUtilisateur();
+            f.profil = this.profil;
             f.MdiParent = this;
             f.Show();
             f.WindowState = FormWindowState.Maximized;
@@ -131,6 +144,7 @@ namespace ApplicationSoutenance
         {
             fermer();
             frmDepartements f = new frmDepartements();
+            f.profil = this.profil;
             f.MdiParent = this;
             f.Show();
             f.WindowState = FormWindowState.Maximized;
@@ -138,7 +152,9 @@ namespace ApplicationSoutenance
 
         private void soutenanceToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            fermer();
             frmSoutenance f = new frmSoutenance();
+            f.profil = this.profil;
             f.MdiParent = this;
             f.Show();
             f.WindowState = FormWindowState.Maximized;
@@ -146,15 +162,14 @@ namespace ApplicationSoutenance
 
         private void memoireToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            fermer();
             frmMemoire f = new frmMemoire();
+            f.profil = this.profil;
             f.MdiParent = this;
             f.Show();
             f.WindowState = FormWindowState.Maximized;
         }
 
-        private void panelHeader_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
     }
 }

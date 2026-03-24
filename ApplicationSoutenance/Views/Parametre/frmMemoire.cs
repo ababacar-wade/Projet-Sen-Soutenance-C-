@@ -14,6 +14,7 @@ namespace ApplicationSoutenance.Views.Parametre
 {
     public partial class frmMemoire : Form
     {
+        public string profil;
         public frmMemoire()
         {
             InitializeComponent();
@@ -25,6 +26,18 @@ namespace ApplicationSoutenance.Views.Parametre
         private void frmMemoire_Load(object sender, EventArgs e)
         {
             Effacer();
+            if (profil == "Candidat")
+            {
+                btnAjouter.Enabled = false;
+                btnModifier.Enabled = false;
+                btnSupprimer.Enabled = false;
+            }
+            else if (profil == "Professeur")
+            {
+                btnAjouter.Enabled = true;
+                btnModifier.Enabled = false;
+                btnSupprimer.Enabled = false;
+            }
         }
 
         private void Effacer()
