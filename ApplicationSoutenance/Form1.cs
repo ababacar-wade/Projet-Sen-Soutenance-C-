@@ -100,7 +100,7 @@ namespace ApplicationSoutenance
         static bool VerifyMd5Hash(MD5 md5Hash, string input, string hash)
         {
             // Génère le hash MD5 du texte saisi (ex : mot de passe entré par l'utilisateur)
-            string hashOfInput = AppSenSoutenance.Shared.Crypted.GetMd5Hash(md5Hash, input);
+            string hashOfInput = ApplicationSoutenance.Shared.Crypted.GetMd5Hash(md5Hash, input);
             // Crée un comparateur de chaînes insensible à la casse
             // (MD5 peut être écrit en majuscules ou minuscules)
             StringComparer comparer = StringComparer.OrdinalIgnoreCase;

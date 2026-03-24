@@ -1,3 +1,6 @@
 <Solution>
   <Project Path="ApplicationSoutenance/ApplicationSoutenance.csproj" Id="70f5e38f-0e6e-4017-a592-f1df406ddb79" />
+  <Project Path="SetupSenSoutenance/SetupSenSoutenance.vdproj" Type="Installer">
+    <Build />
+  </Project>
 </Solution>

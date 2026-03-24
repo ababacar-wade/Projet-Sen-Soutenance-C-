@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppSenSoutenance.Shared
+namespace ApplicationSoutenance.Shared
 {
     public static class Crypted
     {

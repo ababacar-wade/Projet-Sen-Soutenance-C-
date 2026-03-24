@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using ZstdSharp.Unsafe;
 
 // Déclaration du namespace Shared pour les classes utilitaires partagées dans l'application
-namespace AppSenSoutenance.Shared
+namespace ApplicationSoutenance.Shared
 {
     // Classe utilitaire pour remplir des listes déroulantes avec des données de la base
     public class FillerList

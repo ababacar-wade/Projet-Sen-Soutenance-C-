@@ -1,6 +1,6 @@
 ﻿
 using ApplicationSoutenance.Models;
-using AppSenSoutenance.Shared;
+using ApplicationSoutenance.Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AppSenSoutenance.Views.Account
+namespace ApplicationSoutenance.Views.Account
 {
     public partial class frmUtilisateur : Form
     {

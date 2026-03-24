@@ -1,4 +1,4 @@
-﻿namespace AppSenSoutenance.Views.Account
+﻿namespace ApplicationSoutenance.Views.Account
 {
     partial class frmUtilisateur
     {
@@ -921,7 +921,7 @@
         private System.Windows.Forms.Panel panelFormCandidat;
         private System.Windows.Forms.Panel panelButtonsCandidat;
         private System.Windows.Forms.DataGridView dgCandidats;
-        
+
         private System.Windows.Forms.TextBox txtMatricule;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTel;
