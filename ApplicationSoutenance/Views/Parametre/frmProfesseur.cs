@@ -1,4 +1,4 @@
-﻿using ApplicationSoutenance.Models;
+using ApplicationSoutenance.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,28 +14,28 @@ namespace ApplicationSoutenance.Views.Parametre
     // Formulaire de gestion des années académiques
     public partial class frmProfesseur : Form
     {
-        // Constructeur du formulaire
         public frmProfesseur()
         {
-            // Initialisation des composants graphiques
             InitializeComponent();
-
-            // Liaison manuelle des événements Click
-            btnModifier.Click += btnModifier_Click;
-            btnSupprimer.Click += btnSupprimer_Click;
-            btnSlectionner.Click += btnSlectionner_Click;
         }
 
-        // Création du contexte de base de données (Entity Framework)
         BdSoutenanceContext bd = new BdSoutenanceContext();
 
-        // Événement du bouton Ajouter
+        private void frmProfesseur_Load(object sender, EventArgs e)
+        {
+            Effacer();
+        }
+
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            // Création d’un nouvel objet professeur
-            Professeur professeur = new Professeur()
+            if (string.IsNullOrEmpty(txtNom.Text) || string.IsNullOrEmpty(txtPrenom.Text))
             {
-                // Récupération les variable depuis le TextBox
+                MessageBox.Show("Nom et Prénom sont obligatoires.");
+                return;
+            }
+
+            Professeur p = new Professeur()
+            {
                 Nomutilisateur = txtNom.Text,
                 PrenomUtilisateur = txtPrenom.Text,
                 TelUtilisateur = txtTelephone.Text,
@@ -44,165 +44,111 @@ namespace ApplicationSoutenance.Views.Parametre
                 SpecialiteProfesseur = txtSpecialite.Text,
             };
 
-            // Ajout de l’objet dans la base de données
-            bd.professeurs.Add(professeur);
-
-            // Enregistrement des modifications
+            bd.professeurs.Add(p);
             bd.SaveChanges();
-
-            // Réinitialisation des champs et du tableau
             Effacer();
-
         }
 
-        // Événement déclenché au chargement du formulaire
-        private void frmProfesseur_Load(object sender, EventArgs e)
-        {
-            dgProfesseur.DataSource = bd.professeurs.ToList();
-        }
-
-        // Événement du bouton modifier
         private void btnModifier_Click(object sender, EventArgs e)
         {
-            if (dgProfesseur.CurrentRow == null)
+            if (dgProfesseur.CurrentRow == null) return;
+            int id = int.Parse(dgProfesseur.CurrentRow.Cells[0].Value.ToString());
+            Professeur p = bd.professeurs.Find(id);
+            if (p != null)
             {
-                MessageBox.Show("Veuillez sélectionner un professeur !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            object cellValue = dgProfesseur.CurrentRow.Cells["Idutilisateur"].Value;
-            if (cellValue == null || !int.TryParse(cellValue.ToString(), out int id))
-            {
-                MessageBox.Show("Impossible de récupérer l'ID du professeur.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            Professeur professeur = bd.professeurs.Find(id);
-            if (professeur == null)
-            {
-                MessageBox.Show("Professeur introuvable !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            professeur.Nomutilisateur = txtNom.Text;
-            professeur.PrenomUtilisateur = txtPrenom.Text;
-            professeur.TelUtilisateur = txtTelephone.Text;
-            professeur.Email = txtEmail.Text;
-            professeur.MotDePasse = txtMotDePasse.Text;
-            professeur.SpecialiteProfesseur = txtSpecialite.Text;
-
-            // Sauvegarde les modifications avec gestion des erreurs de validation
-            try
-            {
+                p.Nomutilisateur = txtNom.Text;
+                p.PrenomUtilisateur = txtPrenom.Text;
+                p.TelUtilisateur = txtTelephone.Text;
+                p.Email = txtEmail.Text;
+                if (!string.IsNullOrEmpty(txtMotDePasse.Text))
+                {
+                    p.MotDePasse = txtMotDePasse.Text;
+                }
+                p.SpecialiteProfesseur = txtSpecialite.Text;
+                
                 bd.SaveChanges();
                 Effacer();
             }
-            catch (System.Data.Entity.Validation.DbEntityValidationException ex)
-            {
-                // Parcours toutes les erreurs de validation et les affiche
-                foreach (var error in ex.EntityValidationErrors)
-                    foreach (var detail in error.ValidationErrors)
-                        MessageBox.Show(detail.PropertyName + " : " + detail.ErrorMessage, "Erreur Validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
-        // Événement du bouton supprimer
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
-            // Vérifier qu’une ligne est sélectionnée
-            if (dgProfesseur.CurrentRow == null)
+            if (dgProfesseur.CurrentRow == null) return;
+            int id = int.Parse(dgProfesseur.CurrentRow.Cells[0].Value.ToString());
+            Professeur p = bd.professeurs.Find(id);
+            if (p != null)
             {
-                MessageBox.Show("Veuillez sélectionner un professeur !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // Récupérer l'ID de la ligne sélectionnée en utilisant le nom de la colonne
-            object cellValue = dgProfesseur.CurrentRow.Cells["Idutilisateur"].Value;
-            if (cellValue == null || !int.TryParse(cellValue.ToString(), out int id))
-            {
-                MessageBox.Show("Impossible de récupérer l'ID du professeur.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Chercher le professeur correspondant dans la base
-            Professeur professeur = bd.professeurs.Find(id);
-            if (professeur == null)
-            {
-                MessageBox.Show("Professeur introuvable !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Confirmation avant suppression
-            DialogResult result = MessageBox.Show(
-                "Voulez-vous vraiment supprimer ce professeur ?",
-                "Confirmation",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
-
-
-            // Si l'utilisateur confirme
-            if (result == DialogResult.Yes)
-            {
-                // Supprimer le professeur
-                bd.professeurs.Remove(professeur);
-
-                // Sauvegarde les modifications et gère les erreurs de validation
-                try
+                DialogResult result = MessageBox.Show("Voulez-vous vraiment supprimer ce professeur ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
+                    bd.professeurs.Remove(p);
                     bd.SaveChanges();
-                    Effacer(); // Rafraîchir les données et vider les champs
-                }
-                catch (System.Data.Entity.Validation.DbEntityValidationException ex)
-                {
-                    foreach (var error in ex.EntityValidationErrors)
-                        foreach (var detail in error.ValidationErrors)
-                            MessageBox.Show(detail.PropertyName + " : " + detail.ErrorMessage, "Erreur Validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Effacer();
                 }
             }
         }
 
-        // Événement du bouton supprimer
         private void btnSlectionner_Click(object sender, EventArgs e)
         {
-            txtNom.Text = dgProfesseur.CurrentRow.Cells["Nomutilisateur"].Value.ToString();
-            txtPrenom.Text = dgProfesseur.CurrentRow.Cells["PrenomUtilisateur"].Value.ToString();
-            txtTelephone.Text = dgProfesseur.CurrentRow.Cells["TelUtilisateur"].Value.ToString();
-            txtEmail.Text = dgProfesseur.CurrentRow.Cells["Email"].Value.ToString();
-            txtMotDePasse.Text = dgProfesseur.CurrentRow.Cells["MotDePasse"].Value.ToString();
-            txtSpecialite.Text = dgProfesseur.CurrentRow.Cells["SpecialiteProfesseur"].Value.ToString();
+            if (dgProfesseur.CurrentRow == null) return;
+            int id = int.Parse(dgProfesseur.CurrentRow.Cells[0].Value.ToString());
+            Professeur p = bd.professeurs.Find(id);
+            if (p != null)
+            {
+                txtNom.Text = p.Nomutilisateur;
+                txtPrenom.Text = p.PrenomUtilisateur;
+                txtTelephone.Text = p.TelUtilisateur;
+                txtEmail.Text = p.Email;
+                txtMotDePasse.Text = p.MotDePasse;
+                txtSpecialite.Text = p.SpecialiteProfesseur;
+            }
         }
 
-        // methode d'effacement 
-        // Méthode pour vider les champs et rafraîchir le DataGridView
         private void Effacer()
         {
-            // Vider le champ nom
             txtNom.Clear();
-
-            // Vider le champ prenom
             txtPrenom.Clear();
-
-            // Vider le champ telephone
             txtTelephone.Clear();
-
-            // Vider le champ email
             txtEmail.Clear();
-
-            // Vider le champ mot de passe 
             txtMotDePasse.Clear();
-
-            // Vider le champ specialite
             txtSpecialite.Clear();
 
+            dgProfesseur.DataSource = bd.professeurs.Select(p => new
+            {
+                ID = p.Idutilisateur,
+                Nom = p.Nomutilisateur,
+                Prénom = p.PrenomUtilisateur,
+                Téléphone = p.TelUtilisateur,
+                p.Email,
+                Spécialité = p.SpecialiteProfesseur
+            }).ToList();
 
-            // Recharger les données dans le DataGridView
-            dgProfesseur.DataSource = bd.professeurs.ToList();
-
-            // Mettre le curseur sur le premier champ
             txtNom.Focus();
         }
 
-       
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            var liste = bd.professeurs.ToList();
+
+            if (!string.IsNullOrEmpty(txtRNom.Text))
+            {
+                liste = liste.Where(p => p.Nomutilisateur.ToLower().Contains(txtRNom.Text.ToLower())).ToList();
+            }
+
+            if (!string.IsNullOrEmpty(txtRSpecialite.Text))
+            {
+                liste = liste.Where(p => p.SpecialiteProfesseur.ToLower().Contains(txtRSpecialite.Text.ToLower())).ToList();
+            }
+
+            dgProfesseur.DataSource = liste.Select(p => new
+            {
+                ID = p.Idutilisateur,
+                Nom = p.Nomutilisateur,
+                Prénom = p.PrenomUtilisateur,
+                Téléphone = p.TelUtilisateur,
+                p.Email,
+                Spécialité = p.SpecialiteProfesseur
+            }).ToList();
+        }
     }
 }
