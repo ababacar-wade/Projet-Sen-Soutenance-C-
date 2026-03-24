@@ -1,4 +1,4 @@
-﻿namespace ApplicationSoutenance
+namespace ApplicationSoutenance
 {
     partial class frmConnexion
     {

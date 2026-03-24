@@ -1,4 +1,4 @@
-﻿namespace ApplicationSoutenance
+namespace ApplicationSoutenance
 {
     partial class frmMdi
     {
@@ -22,13 +22,10 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.tableauDeBordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seDeconnecterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,6 +55,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.actionToolStripMenuItem,
+            this.tableauDeBordToolStripMenuItem,
             this.parametreToolStripMenuItem,
             this.securiteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 100);
@@ -66,6 +64,14 @@
             this.menuStrip1.Size = new System.Drawing.Size(1162, 50);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // tableauDeBordToolStripMenuItem
+            // 
+            this.tableauDeBordToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.tableauDeBordToolStripMenuItem.Name = "tableauDeBordToolStripMenuItem";
+            this.tableauDeBordToolStripMenuItem.Size = new System.Drawing.Size(160, 34);
+            this.tableauDeBordToolStripMenuItem.Text = "&Tableau de Bord";
+            this.tableauDeBordToolStripMenuItem.Click += new System.EventHandler(this.tableauDeBordToolStripMenuItem_Click);
             // 
             // actionToolStripMenuItem
             // 
@@ -252,6 +258,7 @@
         private System.Windows.Forms.Label lblFooter;
         private System.Windows.Forms.ToolStripMenuItem departementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem soutenanceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tableauDeBordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem memoireToolStripMenuItem;
     }
 }

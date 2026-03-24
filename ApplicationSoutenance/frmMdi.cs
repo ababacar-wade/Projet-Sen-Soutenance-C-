@@ -42,7 +42,7 @@ namespace ApplicationSoutenance
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void anneeAcademiqueToolStripMenuItem_Click(object sender, EventArgs e)
+        public void anneeAcademiqueToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //pour fermer tous les autres formulaires ouverts
             fermer();
@@ -62,7 +62,7 @@ namespace ApplicationSoutenance
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void sessionToolStripMenuItem_Click(object sender, EventArgs e)
+        public void sessionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fermer();
             frmSession f = new frmSession();
@@ -77,7 +77,7 @@ namespace ApplicationSoutenance
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void professeursToolStripMenuItem_Click(object sender, EventArgs e)
+        public void professeursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fermer();
             frmProfesseur f = new frmProfesseur();
@@ -128,9 +128,12 @@ namespace ApplicationSoutenance
             this.Width = myComputer.Screen.Bounds.Width;
             this.Height = myComputer.Screen.Bounds.Height;
             this.Location = new Point(0, 0);
+            
+            // Ouvrir le tableau de bord par défaut dès la connexion
+            tableauDeBordToolStripMenuItem_Click(null, null);
         }
 
-        private void utilisateurToolStripMenuItem_Click(object sender, EventArgs e)
+        public void utilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fermer();
             frmUtilisateur f = new frmUtilisateur();
@@ -140,7 +143,7 @@ namespace ApplicationSoutenance
             f.WindowState = FormWindowState.Maximized;
         }
 
-        private void departementToolStripMenuItem_Click(object sender, EventArgs e)
+        public void departementToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fermer();
             frmDepartements f = new frmDepartements();
@@ -150,7 +153,7 @@ namespace ApplicationSoutenance
             f.WindowState = FormWindowState.Maximized;
         }
 
-        private void soutenanceToolStripMenuItem_Click(object sender, EventArgs e)
+        public void soutenanceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fermer();
             frmSoutenance f = new frmSoutenance();
@@ -160,10 +163,20 @@ namespace ApplicationSoutenance
             f.WindowState = FormWindowState.Maximized;
         }
 
-        private void memoireToolStripMenuItem_Click(object sender, EventArgs e)
+        public void memoireToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fermer();
             frmMemoire f = new frmMemoire();
+            f.profil = this.profil;
+            f.MdiParent = this;
+            f.Show();
+            f.WindowState = FormWindowState.Maximized;
+        }
+
+        public void tableauDeBordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fermer();
+            frmTableauBord f = new frmTableauBord();
             f.profil = this.profil;
             f.MdiParent = this;
             f.Show();

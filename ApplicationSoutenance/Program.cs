@@ -1,4 +1,4 @@
-﻿using ApplicationSoutenance.Models;
+using ApplicationSoutenance.Models;
 using ApplicationSoutenance.Views.Parametre;
 using System;
 using System.Collections.Generic;
@@ -27,24 +27,45 @@ namespace ApplicationSoutenance
         {
             BdSoutenanceContext bd = new BdSoutenanceContext();
 
+            // On s'assure que ibou@gmail.com existe et a le bon mot de passe, peu importe son type
+            var userIbou = bd.utilisateurs.FirstOrDefault(u => u.Email == "ibou@gmail.com");
+            if (userIbou == null)
+            {
+                Admin a = new Admin();
+                a.Nomutilisateur = "Ibou";
+                a.PrenomUtilisateur = "ID";
+                a.TelUtilisateur = "+221770000000";
+                a.Email = "ibou@gmail.com";
+                using (MD5 md5Hash = MD5.Create())
+                {
+                    a.MotDePasse = Shared.Crypted.GetMd5Hash(md5Hash, "passer1234");
+                }
+                bd.admins.Add(a);
+                bd.SaveChanges();
+            }
+            else
+            {
+                using (MD5 md5Hash = MD5.Create())
+                {
+                    userIbou.MotDePasse = Shared.Crypted.GetMd5Hash(md5Hash, "passer1234");
+                }
+                bd.SaveChanges();
+            }
+
+            // S'assurer qu'il y a au moins un compte administrateur 
             if (bd.admins.Count() == 0)
             {
-
                 Admin a = new Admin();
-
                 a.Nomutilisateur = "Admin";
                 a.PrenomUtilisateur = "Admin";
                 a.TelUtilisateur = "+221770000000";
                 a.Email = "admin@gmail.com";
                 using (MD5 md5Hash = MD5.Create())
                 {
-
                     a.MotDePasse = Shared.Crypted.GetMd5Hash(md5Hash, "passer1234");
-
                 }
                 bd.admins.Add(a);
                 bd.SaveChanges();
-
             }
         }
     }

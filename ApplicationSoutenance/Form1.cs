@@ -44,8 +44,10 @@ namespace ApplicationSoutenance
                 }
 
                 // Recherche de l’utilisateur dans la base de données à partir de l’email
+                string inputEmail = txtIdentifiant.Text.Trim().ToLower();
                 var utilisateur = bd.utilisateurs
-                    .FirstOrDefault(a => a.Email == txtIdentifiant.Text);
+                    .ToList() // On remonte en mémoire pour une comparaison C# robuste si nécessaire
+                    .FirstOrDefault(a => a.Email.Trim().ToLower() == inputEmail);
 
                 // Si aucun utilisateur n’est trouvé
                 if (utilisateur == null)
